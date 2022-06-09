@@ -30,7 +30,7 @@ st.title('APS評価実験')
 st.write(kyouji)
 
 """
-##クラシック
+##　クラシック
 """
 if st.button('click here!'):
   st.write('音源１')
@@ -39,4 +39,7 @@ if st.checkbox('Show image'):
   img = Image.open('anaconda.png')
   st.image(img, caption='Anaconda Image', use_column_width=True)
 
+"""
+##　鐘の音
+"""
 
