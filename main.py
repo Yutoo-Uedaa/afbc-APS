@@ -31,6 +31,10 @@ st.write(kyouji)
 
 
 if st.button('click here!'):
-  st.write('show text')
+  st.write('音源１')
+  
+if st.checkbox('Show image'):
+  img = Image.open('anaconda.png')
+  st.image(img, caption='Anaconda Image', use_column_width=True)
 
 
