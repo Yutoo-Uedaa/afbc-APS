@@ -45,7 +45,12 @@ with explain.form("my_form"):
     submitted = st.form_submit_button("次へ")
 
 if submitted and sub_name != "":
-    
+    st.session_state.key = str(deyTimeCheck(str(sub_name), str(sub_age)))
+    explainBef.empty()
+    explain.empty()
+    sizi.empty()
+    sizi2.empty()
+    sizi3.empty()
   
 elif submitted:
     st.warning('名前を入力して下さい')
