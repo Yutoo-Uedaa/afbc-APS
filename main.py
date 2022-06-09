@@ -40,8 +40,7 @@ with explain.form("my_form"):
     submitted = st.form_submit_button("次へ")
 
 if submitted and sub_name != "":
-    sizi.empty()
-    sizi2.empty()
+    
   
 elif submitted:
     st.warning('名前を入力して下さい')
