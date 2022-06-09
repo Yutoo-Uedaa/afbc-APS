@@ -23,6 +23,6 @@ def inc_count():
 
 
 st.title('APS評価実験')
-
+st.write(kyouji)
 
 
