@@ -22,6 +22,9 @@ def inc_count():
 
 
 st.title('APS評価実験')
+
 if st.session_state.count == -2:
-
-
+    
+    explainBef = st.empty()
+    with explainBef.expander("実験の説明", True):
+        st.write(kyouji)
