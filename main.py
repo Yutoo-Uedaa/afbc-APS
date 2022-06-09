@@ -24,12 +24,17 @@ def inc_count():
     # print(st.session_state.count)
     # ページの更新
     st.experimental_rerun()
+
+st.title('APS評価実験')
+st.write(kyouji)
     
 sizi2 = st.empty()
 sizi2.write('本実験はヘッドホンでの参加をお願い致します。''こちらの音が聞きやすい大きさでPCの音量を調節し実験中はいじらないでください')
 
-st.title('APS評価実験')
-st.write(kyouji)
+
+sub_name = st.text_input("名前を入力してください   　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　""　　　　　 　　　　  　　　　　 ""例：リオン太郎さんの場合 >>>　t_rion")
+sub_age = st.selectbox('年代を選択してください', ('20代', '30代', '40代', '50代', '60代', '非公表',))
+submitted = st.form_submit_button("次へ")
 
 st.header('クラシック')
 st.write('音源1')
