@@ -28,7 +28,12 @@ def inc_count():
     st.experimental_rerun()
 
 st.title('APS評価実験')
-st.write(kyouji)
+explainBef = st.empty()
+with explainBef.expander("実験の説明", True):
+    st.write(kyouji)
+
+sizi = st.empty()
+sizi.subheader('実験前のお願い')
 
 explain = st.empty()
 sizi2 = st.empty()
