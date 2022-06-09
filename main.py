@@ -32,12 +32,11 @@ st.write(kyouji)
 """
 ##　クラシック
 """
-if st.button('click here!'):
-  st.write('音源１')
+st.write('音源1')
+
+st.write('音源2')
   
-if st.checkbox('Show image'):
-  img = Image.open('anaconda.png')
-  st.image(img, caption='Anaconda Image', use_column_width=True)
+st.selectbox('コンボボックス',('音源1','音源2'))
 
 """
 ##　鐘の音
