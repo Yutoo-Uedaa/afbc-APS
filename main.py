@@ -29,14 +29,12 @@ def inc_count():
 st.title('APS評価実験')
 st.write(kyouji)
 
-"""
-##　クラシック
-"""
+st.header('クラシック')
 st.write('音源1')
 
 st.write('音源2')
   
-st.selectbox('音源選択',('音源1','音源2'))
+st.radio('音源選択',('音源1','音源2'))
 
 """
 ##　鐘の音
