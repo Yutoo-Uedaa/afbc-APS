@@ -22,4 +22,6 @@ def inc_count():
 
 
 st.title('APS評価実験')
+if st.session_state.count == -2:
+
 
