@@ -5,6 +5,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import pickle
+from multiapp import MultiApp
 
 kyouji = """本実験は、雑音抑制機能の性能評価として、雑音の「大きさ」、音声の「大きさ」、「自然さ」を評価するものです。
                     \n提示された基準音と評価音を聴いて、相対的評価を以下の3つの観点から7段階で評価してください。
@@ -23,14 +24,16 @@ def inc_count():
 
 st.title('APS評価実験')
 
-st.set_page_config(layout="wide")
-#セレクトボックスのリストを作成
-pagelist = ["page1","page2"]
-#サイドバーのセレクトボックスを配置
-selector=st.sidebar.selectbox( "ページ選択",pagelist)
-if selector=="page1":
-    if st.button('ページ1ボタン'):
-        st.title("ページ1のタイトル")
-elif selector=="page2":
-    if st.button('ページ2ボタン'):
-        st.title("ページ2のタイトル")
+def greeting1():
+    st.title('こんにちは, 世界！')
+    st.write('ねこはかわいい')
+
+def greeting2():
+    st.title('またまたこんにちは, 世界！！')
+    st.write('ねこはとてもかわいい')
+
+
+app = MultiApp()
+app.add_app("page1", greeting1)
+app.add_app("page2", greeting2)
+app.run()
