@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import pickle
-from multiapp import MultiApp
+
 
 kyouji = """本実験は、雑音抑制機能の性能評価として、雑音の「大きさ」、音声の「大きさ」、「自然さ」を評価するものです。
                     \n提示された基準音と評価音を聴いて、相対的評価を以下の3つの観点から7段階で評価してください。
