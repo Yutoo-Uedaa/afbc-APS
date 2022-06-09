@@ -26,8 +26,7 @@ def inc_count():
     st.experimental_rerun()
     
 sizi2 = st.empty()
-sizi2.write('本実験はヘッドホンでの参加をお願い致します。'
-   　　　　　'こちらの音が聞きやすい大きさでPCの音量を調節し実験中はいじらないでください')
+sizi2.write('本実験はヘッドホンでの参加をお願い致します。''こちらの音が聞きやすい大きさでPCの音量を調節し実験中はいじらないでください')
 
 st.title('APS評価実験')
 st.write(kyouji)
