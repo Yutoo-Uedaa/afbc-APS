@@ -108,8 +108,7 @@ if st.session_state.count == -2:
     audio_file_2=open('Test1_FS_AFC_60_classics.wav','rb')
     st.audio(audio_file_2.read())
     
-    st.write('１ー２．')
-    st.radio('よりリファレンス音源に近い音源を選択してください。',('音源1','音源2'))
+    st.radio('１ー２．リファレンス音源に近い音源を選択してください。',('音源1','音源2'))
     st.write(' 音源1')
    
 
