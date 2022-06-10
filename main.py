@@ -55,6 +55,14 @@ if submitted and sub_name != "":
 elif submitted:
     st.warning('名前を入力して下さい')
     
+    
+sizi = st.empty()
+sizi.subheader('提示音サンプル')
+sizi2 = st.empty()
+sizi2.write('評価対象音源のサンプルをお聞きください．')
+sizi3 = st.empty()
+sizi3.write('※まだ実験は始まっていません'
+    
 st.header('クラシック')
 st.write('音源1')
 
