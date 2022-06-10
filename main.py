@@ -94,10 +94,9 @@ if st.session_state.count == -2:
     sizi3.write('※まだ実験は始まっていません')
     
     st.header('クラシック')
-    testSound1 = st.empty()
-    testSound1.write('モデル')
     st.write('音源1')
-
+    audio_file=open('Test1_reference_60_classics.wav','rb')
+    st.audio(audio_file.read())
     st.write('音源2')
   
     st.radio('音源選択',('音源1','音源2'))
