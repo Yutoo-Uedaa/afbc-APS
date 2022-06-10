@@ -7,6 +7,7 @@ import numpy as np
 import pickle
 
 
+
 kyouji = """本実験は、エントレインメント抑制機能の性能評価として、通常のNLMS、周波数シフトを用いたNLMS、提案手法の音声を聴き比べ評価するものです。
                     \n提示された基準音と評価音の二つを聴き比べ、基準音にどちらが近い音かを評価してください。
                     \n６つの音源を聞き比べる
@@ -101,7 +102,7 @@ if st.session_state.count == -2:
     audio_file1=open('Test1_AFC_60_classics.wav','rb')
     st.audio(audio_file1.read())
     st.write(' 音源2')
-  　audio_file2=open('Test1_FS_AFC_60_classics.wav','rb')
+  　audio_file2=open('Test1_AFC_60_classics.wav','rb')
     st.audio(audio_file2.read())
     st.radio('よりリファレンス音源に近い音源を選択してください。',('音源1','音源2'))
     
