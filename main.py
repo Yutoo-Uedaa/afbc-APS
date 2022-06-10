@@ -61,7 +61,7 @@ sizi.subheader('提示音サンプル')
 sizi2 = st.empty()
 sizi2.write('評価対象音源のサンプルをお聞きください．')
 sizi3 = st.empty()
-sizi3.write('※まだ実験は始まっていません'
+sizi3.write('※まだ実験は始まっていません')
     
 st.header('クラシック')
 st.write('音源1')
