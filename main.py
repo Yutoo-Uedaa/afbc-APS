@@ -27,6 +27,33 @@ def inc_count():
     # ページの更新
     st.experimental_rerun()
 
+# 一度だけ実行
+@st.cache
+def deyTimeCheck(alpha, beta):
+    dt_now = str(datetime.date.today())
+    return str(alpha + beta + dt_now)
+    
+# スライドバーから、数値を返す
+def format_func1(option):
+    return CHOICES1[option]
+
+def format_func2(option):
+    return CHOICES2[option]
+
+def format_func3(option):
+    return CHOICES3[option]
+
+if 'count' not in st.session_state: #ページ番号をつかさどっている
+    st.session_state.count = -2
+if 'group' not in st.session_state:
+    st.session_state.group = -1
+if 'key' not in st.session_state:
+    st.session_state.key = 'value'
+if 'time' not in st.session_state:
+    st.session_state.time = 0
+if 'time2' not in st.session_state:
+    st.session_state.time2 = 0    
+
 st.title('APS評価実験')
 explainBef = st.empty()
 with explainBef.expander("実験の説明", True):
@@ -51,26 +78,26 @@ if submitted and sub_name != "":
     sizi.empty()
     sizi2.empty()
     sizi3.empty()
+    st.session_state.count = -1
   
 elif submitted:
     st.warning('名前を入力して下さい')
     
     
-sizi = st.empty()
-sizi.subheader('提示音サンプル')
-sizi2 = st.empty()
-sizi2.write('評価対象音源のサンプルをお聞きください．')
-sizi3 = st.empty()
-sizi3.write('※まだ実験は始まっていません')
+if st.session_state.count == -1:
+    sizi = st.empty()
+    sizi.subheader('提示音サンプル')
+    sizi2 = st.empty()
+    sizi2.write('評価対象音源のサンプルをお聞きください．')
+    sizi3 = st.empty()
+    sizi3.write('※まだ実験は始まっていません')
     
-st.header('クラシック')
-st.write('音源1')
+    st.header('クラシック')
+    st.write('音源1')
 
-st.write('音源2')
+    st.write('音源2')
   
-st.radio('音源選択',('音源1','音源2'))
+    st.radio('音源選択',('音源1','音源2'))
 
-"""
-##　鐘の音
-"""
+
 
