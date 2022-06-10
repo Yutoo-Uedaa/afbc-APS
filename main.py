@@ -94,18 +94,30 @@ if st.session_state.count == -2:
     sizi3 = st.empty()
     sizi3.write('※まだ実験は始まっていません')
     
-    st.header('クラシック')
+    st.header('１．クラシック')
     st.write('リファレンス音源\n')
     audio_file=open('Test1_reference_60_classics.wav','rb')
-    st.write('１．')
+    st.audio(audio_file.read())
+    
+    st.write('１ー１．')
+    st.radio('よりリファレンス音源に近い音源を選択してください。',('音源1','音源2'))
     st.write(' 音源1')
     audio_file1=open('Test1_AFC_60_classics.wav','rb')
     st.audio(audio_file1.read())
-    
     st.write(' 音源2')
-    audio_file_2=open('Test1_AFC_60_classics.wav','rb')
+    audio_file_2=open('Test1_FS_AFC_60_classics.wav','rb')
     st.audio(audio_file_2.read())
+    
+    st.write('１ー２．')
     st.radio('よりリファレンス音源に近い音源を選択してください。',('音源1','音源2'))
+    st.write(' 音源1')
+    audio_file1=open('Test1_AFC_60_classics.wav','rb')
+    st.audio(audio_file1.read())
+    st.write(' 音源2')
+    audio_file_2=open('Test1_B_PEM_AFC_60_classics.wav','rb')
+    st.audio(audio_file_2.read())
+
+
     
 
 
