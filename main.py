@@ -125,7 +125,7 @@ if st.session_state.count == -3:
     audio_file_6=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     st.audio(audio_file_6.read())
     
-    if st.button("次へ"):
+    st.button("次へ")
     
     
     df = pd.DataFrame({'1': [select1], '2': [select2], '3': [select3],})
