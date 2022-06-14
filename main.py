@@ -132,7 +132,7 @@ if st.session_state.count == -2:
     df.to_csv('result_all_subject.csv', mode='a', header=False, index=False, encoding='utf_8_sig')
 
     
-    submitted2 = st.form_submit_button("終了")
+    submitted2 = st.button("終了")
     if submitted2  != "":
         st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')
         st.balloons()
