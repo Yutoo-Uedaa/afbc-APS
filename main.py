@@ -128,7 +128,7 @@ if st.session_state.count == -2:
 
     df = pd.DataFrame({'1': [select1], '2': [select2], '3': [select3],})
     st.dataframe(df)
-    df.to_csv(save_path + 'result_all_subject.csv', mode='a', header=False, index=False, encoding='utf_8_sig')
+    df.to_csv(save_path + '/result_all_subject.csv', mode='a', header=False, index=False, encoding='utf_8_sig')
 
     
     st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')
