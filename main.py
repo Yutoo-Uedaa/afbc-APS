@@ -130,7 +130,9 @@ if st.session_state.count == -2:
     df.to_csv(save_path + 'result_all_subject.csv', mode='a', header=False, index=False, encoding='utf_8_sig')
 
     
-
+    st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')
+    st.balloons()
+    st.stop()
 
 
 
