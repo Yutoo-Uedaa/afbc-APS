@@ -126,6 +126,8 @@ if st.session_state.count == -2:
     
     st.write(select1,select2,select3)
 
+    df = pd.DataFrame({'1': [select1], '2': [select2], '3': [select3],})
+    df.to_csv(save_path + 'result_all_subject.csv', mode='a', header=False, index=False, encoding='utf_8_sig')
 
     
 
