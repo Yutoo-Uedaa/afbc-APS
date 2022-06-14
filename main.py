@@ -95,12 +95,12 @@ if st.session_state.count == -2:
     sizi3.write('※まだ実験は始まっていません')
     
     st.header('１．クラシック')
-    st.write('リファレンス音源\n')
+    st.write('リファレンス音源\n何回聞いても問題ありません')
     audio_file=open('Test1_reference_60_classics.wav','rb')
     st.audio(audio_file.read())
     # AFC/FS
     st.write('１ー１．')
-    st.radio('よりリファレンス音源に近い音源を選択してください。',('音源1','音源2'))
+    select1=st.radio('よりリファレンス音源に近い音源を選択してください。',('音源1','音源2'))
     st.write(' 音源1')
     audio_file1=open('Test1_AFC_60_classics.wav','rb')
     st.audio(audio_file1.read())
@@ -108,7 +108,7 @@ if st.session_state.count == -2:
     audio_file_2=open('Test1_FS_AFC_60_classics.wav','rb')
     st.audio(audio_file_2.read())
     # AFC/B-PEM-AFC
-    st.radio('１ー２．リファレンス音源に近い音源を選択してください。',('音源1','音源2'))
+    select2=st.radio('１ー２．リファレンス音源に近い音源を選択してください。',('音源1','音源2'))
     st.write(' 音源1')
     audio_file_3=open('Test1_AFC_60_classics.wav','rb')
     st.audio(audio_file_3.read())
@@ -116,13 +116,15 @@ if st.session_state.count == -2:
     audio_file_4=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     st.audio(audio_file_4.read())
     # FS-AFC/B-PEM-AFC
-    st.radio('１ー３．リファレンス音源に近い音源を選択してください。',('音源1','音源2'))
+    select3=st.radio('１ー３．リファレンス音源に近い音源を選択してください。',('音源1','音源2'))
     st.write(' 音源1')
     audio_file_5=open('Test1_FS_AFC_60_classics.wav','rb')
     st.audio(audio_file_5.read())
     st.write(' 音源2')
     audio_file_6=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     st.audio(audio_file_6.read())
+    
+    st.write(select1,select2,select3)
 
 
     
