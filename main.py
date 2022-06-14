@@ -129,12 +129,12 @@ if st.session_state.count == -3:
 
     df = pd.DataFrame({'1': [select1], '2': [select2], '3': [select3],})
     st.dataframe(df)
-    df.to_csv('out.csv', mode='a', header=False, index=False, encoding='utf_8_sig')
+    
 
     
     submitted2 = st.button("終了")
-    if submitted2  == "":
-        st.session_state.count =0
+    if submitted2  != "":
+        df.to_csv('out.csv', mode='a', header=False, index=False, encoding='utf_8_sig')
     if st.session_state.count == 0:
         st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')
         st.balloons()
