@@ -81,13 +81,13 @@ if submitted and sub_name != "":
     sizi2.empty()
     sizi3.empty()
     st.session_state.count = -3
-    csv_file = os.listdir(conf.exp_folder_path + '/result_each_subject')
+    # csv_file = os.listdir(conf.exp_folder_path + '/result_each_subject')
   
 elif submitted:
     st.warning('名前を入力して下さい')
     
     
-if st.session_state.count == -1:
+if st.session_state.count == -3:
     sizi = st.empty()
     sizi.subheader('提示音サンプル')
     sizi2 = st.empty()
