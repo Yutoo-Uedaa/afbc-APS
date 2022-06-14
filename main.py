@@ -132,6 +132,7 @@ if st.session_state.count == -3:
 
     
     submitted2 = st.button("終了")
+    st.write(submitted)
     if submitted2  != "":
         df.to_csv('out.csv', mode='a', header=False, index=False, encoding='utf_8_sig')
         st.write(select1,select2,select3)
