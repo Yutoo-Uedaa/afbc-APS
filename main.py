@@ -133,7 +133,7 @@ if st.session_state.count == -2:
 
     
     submitted2 = st.form_submit_button("終了")
-    if submitted  != "":
+    if submitted2  != "":
         st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')
         st.balloons()
         st.stop()
