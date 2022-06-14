@@ -132,7 +132,7 @@ if st.session_state.count == -3:
 
     
     if st.button("終了"):
-        df.to_csv('out.csv', mode='a', header=False, index=False, encoding='utf_8_sig')
+        df.to_csv('result_all_subject.csv')
         st.write(select1,select2,select3)
     if st.session_state.count == 0:
         st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')
