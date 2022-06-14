@@ -133,7 +133,7 @@ if st.session_state.count == -2:
 
     
     submitted2 = st.button("終了")
-    if submitted2  != "":
+    if submitted2  == "":
         st.session_state.count =0
     if st.session_state.count == 0:
         st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')
