@@ -7,6 +7,8 @@ import numpy as np
 import pickle
 
 
+self.exp_folder_path = '../result/' + self.exp_folder_name #実験結果のメインフォルダパス
+
 
 kyouji = """本実験は、エントレインメント抑制機能の性能評価として、通常のNLMS、周波数シフトを用いたNLMS、提案手法の音声を聴き比べ評価するものです。
                     \n提示された基準音と評価音の二つを聴き比べ、基準音にどちらが近い音かを評価してください。
