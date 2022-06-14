@@ -7,7 +7,6 @@ import numpy as np
 import pickle
 
 
-self.exp_folder_path = '../result/' + self.exp_folder_name #実験結果のメインフォルダパス
 
 
 kyouji = """本実験は、エントレインメント抑制機能の性能評価として、通常のNLMS、周波数シフトを用いたNLMS、提案手法の音声を聴き比べ評価するものです。
@@ -130,7 +129,7 @@ if st.session_state.count == -2:
 
     df = pd.DataFrame({'1': [select1], '2': [select2], '3': [select3],})
     st.dataframe(df)
-    df.to_csv(save_path + '/result_all_subject.csv', mode='a', header=False, index=False, encoding='utf_8_sig')
+    df.to_csv('result_all_subject.csv', mode='a', header=False, index=False, encoding='utf_8_sig')
 
     
     submitted2 = st.form_submit_button("終了")
