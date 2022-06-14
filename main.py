@@ -125,7 +125,6 @@ if st.session_state.count == -3:
     audio_file_6=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     st.audio(audio_file_6.read())
     
-    st.write(select1,select2,select3)
 
     df = pd.DataFrame({'1': [select1], '2': [select2], '3': [select3],})
     st.dataframe(df)
@@ -135,6 +134,7 @@ if st.session_state.count == -3:
     submitted2 = st.button("終了")
     if submitted2  != "":
         df.to_csv('out.csv', mode='a', header=False, index=False, encoding='utf_8_sig')
+        st.write(select1,select2,select3)
     if st.session_state.count == 0:
         st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')
         st.balloons()
