@@ -138,7 +138,7 @@ if st.session_state.count == -8:
     my_bar.progress(int(100/6*1))
         
     next2_button=st.button('次の音源へ')
-    if next_button:
+    if next2_button:
         st.session_state.count = -7
     
 if st.session_state.count == -7:
@@ -152,7 +152,7 @@ if st.session_state.count == -7:
     st.write(' 音源2')
     
     next3_button=st.button('次の音源へ')
-    if :
+    if next3_button:
         st.session_state.count = -6
 
 if st.session_state.count == -6:
