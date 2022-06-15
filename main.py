@@ -100,6 +100,8 @@ if st.session_state.count == -9:
     
     start_button=st.button('実験を始める')
     if start_button:
+        df = pd.DataFrame({'1': ['名前'], '2': ['音源'], '3': ['テスト１'], '4': ['テスト２'], '5': ['テスト３']})
+        df.to_csv('data/outresult_sample1.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -150,7 +152,7 @@ if st.session_state.count == -8:
     
     next2_button=st.button('次の音源(鐘の音)へ')
     if next2_button:
-        df.to_csv('data/outresult_sample.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
+        df.to_csv('data/outresult_sample1.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -199,7 +201,7 @@ if st.session_state.count == -7:
     
     next3_button=st.button('次の音源(救急車のサイレン)へ')
     if next3_button:
-        df.to_csv('data/outresult_sample.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
+        df.to_csv('data/outresult_sample1.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -247,6 +249,11 @@ if st.session_state.count == -6:
    
 
     if st.button("終了"):
+        df.to_csv('data/outresult_sample1.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
+        sizi.empty()
+        sizi2.empty()
+        sizi3.empty()
+        sizi4.empty()
         st.session_state.count = -5
  
 if st.session_state.count == -5:
