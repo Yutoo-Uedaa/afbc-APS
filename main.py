@@ -134,21 +134,11 @@ if st.session_state.group >= 0:
     st.audio(audio_file_6.read())
     
     if st.button("次へ"):
-        st.session_state.count == 1
-
-if st.session_state.count == 1:
-    st.header('１．鐘の音')
-    st.write('リファレンス音源\n何回聞いても問題ありません')
-    
-    
-    if st.button("次へ"):
-        st.session_state.count == 2
-    
-    
-    df = pd.DataFrame({'1': [sub_name], '2': [sub_age], '3': [select1],
+        st.header('１．鐘の音')
+        st.write('リファレンス音源\n何回聞いても問題ありません')
+        df = pd.DataFrame({'1': [sub_name], '2': [sub_age], '3': [select1],
                        '4': [select2],  '5': [select3]})
-    
-    # st.dataframe(df)
+        st.dataframe(df)
     
 
     
