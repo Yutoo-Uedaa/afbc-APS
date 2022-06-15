@@ -100,7 +100,7 @@ if st.session_state.count == -9:
     
     start = st.empty()
     with start.from("my_form2"):
-        start_button=st.button('実験を始める')
+        start_button=st.form__button('実験を始める')
     if start_button:
         df = pd.DataFrame({'1': ['名前'], '2': ['音源'], '3': ['テスト１'], '4': ['テスト２'], '5': ['テスト３']})
         df.to_csv('data/outresult_sample1.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
