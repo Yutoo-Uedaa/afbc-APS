@@ -58,37 +58,38 @@ if 'time2' not in st.session_state:
     st.session_state.time2 = 0    
 
 st.title('APS評価実験')
-explainBef = st.empty()
-with explainBef.expander("実験の説明", True):
-    st.write(kyouji)
+if st.session_state.count == -3:   
+    explainBef = st.empty()
+    with explainBef.expander("実験の説明", True):
+        st.write(kyouji)
 
-sizi = st.empty()
-sizi.subheader('実験前のお願い')
+    sizi = st.empty()
+    sizi.subheader('実験前のお願い')
 
-explain = st.empty()
-sizi2 = st.empty()
-sizi2.write('本実験はヘッドホンでの参加をお願い致します。''こちらの音が聞きやすい大きさでPCの音量を調節し実験中はいじらないでください')
+    explain = st.empty()
+    sizi2 = st.empty()
+    sizi2.write('本実験はヘッドホンでの参加をお願い致します。''こちらの音が聞きやすい大きさでPCの音量を調節し実験中はいじらないでください')
 
-with explain.form("my_form"):
-    sub_name = st.text_input("名前を入力してください   　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　""　　　　　 　　　　  　　　　　 ""例：リオン太郎さんの場合 >>>　t_rion")
-    sub_age = st.selectbox('年代を選択してください', ('20代', '30代', '40代', '50代', '60代', '非公表',))
-    submitted = st.form_submit_button("次へ")
+    with explain.form("my_form"):
+        sub_name = st.text_input("名前を入力してください   　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　""　　　　　 　　　　  　　　　　 ""例：リオン太郎さんの場合 >>>　t_rion")
+        sub_age = st.selectbox('年代を選択してください', ('20代', '30代', '40代', '50代', '60代', '非公表',))
+        submitted = st.form_submit_button("次へ")
 
-if submitted and sub_name != "":
-    # st.session_state.key = str(deyTimeCheck(str(sub_name), str(sub_age)))
-    explainBef.empty()
-    explain.empty()
-    sizi.empty()
-    sizi2.empty()
-    sizi3.empty()
-    st.session_state.count = -3
-    # csv_file = os.listdir(conf.exp_folder_path + '/result_each_subject')
+    if submitted and sub_name != "":
+        # st.session_state.key = str(deyTimeCheck(str(sub_name), str(sub_age)))
+        explainBef.empty()
+        explain.empty()
+        sizi.empty()
+        sizi2.empty()
+        sizi3.empty()
+        st.session_state.count = -2
+        # csv_file = os.listdir(conf.exp_folder_path + '/result_each_subject')
   
-elif submitted:
-    st.warning('名前を入力して下さい')
+    elif submitted:
+        st.warning('名前を入力して下さい')
     
     
-if st.session_state.count == -3:
+if st.session_state.count == -2:
     sizi = st.empty()
     sizi.subheader('提示音サンプル')
     sizi2 = st.empty()
