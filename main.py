@@ -47,7 +47,7 @@ def format_func3(option):
     return CHOICES3[option]
 
 if 'count' not in st.session_state: #ページ番号をつかさどっている
-    st.session_state.count = -2
+    st.session_state.count = -5
 if 'group' not in st.session_state:
     st.session_state.group = -1
 if 'key' not in st.session_state:
@@ -57,7 +57,7 @@ if 'time' not in st.session_state:
 if 'time2' not in st.session_state:
     st.session_state.time2 = 0    
     
-if st.session_state.count == -2:  
+if st.session_state.count == -5:  
     st.title('APS評価実験') 
     explainBef = st.empty()
     with explainBef.expander("実験の説明", True):
@@ -81,14 +81,14 @@ if st.session_state.count == -2:
         explain.empty()
         sizi.empty()
         sizi2.empty()
-        st.session_state.count = -1
+        st.session_state.count = -4
         # csv_file = os.listdir(conf.exp_folder_path + '/result_each_subject')
   
     elif submitted:
         st.warning('名前を入力して下さい')
     
     
-if st.session_state.count == -1:
+if st.session_state.count == -4:
     sizi = st.empty()
     sizi.subheader('提示音サンプル')
     sizi2 = st.empty()
@@ -101,9 +101,9 @@ if st.session_state.count == -1:
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
-        st.session_state.count = 0
+        st.session_state.count = -3
     
-if st.session_state.count >= 0:
+if st.session_state.count == -3:
     st.session_state.time = time.time()
     my_bar = st.progress(0)
     my_bar.progress(int(100/6*1))
@@ -139,7 +139,7 @@ if st.session_state.count >= 0:
     my_bar.progress(int(100/6*1))
         
     st.write(st.session_state.key)
-    df = pd.DataFrame({'1': [st.session_state.key], '2': [select1], '3': [select2], '4': [select2]})
+    df = pd.DataFrame({'1': [st.session_state.key], '2': [select1], '3': [select2], '4': [select3]})
     st.dataframe(df)
     
 
