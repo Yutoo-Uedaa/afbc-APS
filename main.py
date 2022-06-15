@@ -286,7 +286,7 @@ if st.session_state.count == -6:
     sizi5.audio(audio_file_test_bytes, start_time=0)
     sizi6 = st.empty()
     sizi6.write(' 音源2')
-    audio_file=open('Test1_B_PEM_AFC_60_ambulance_siren.wav','rb')
+    audio_file=open('Test3_B_PEM_AFC_60_ambulance_siren.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi6.audio(audio_file_test_bytes, start_time=0)
     # FS-AFC/B-PEM-AFC
@@ -299,7 +299,7 @@ if st.session_state.count == -6:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sizi8 = st.empty()
     sizi8.write(' 音源2')
-    audio_file=open('Test1_B_PEM_AFC_60_ambulance_siren.wav','rb')
+    audio_file=open('Test3_B_PEM_AFC_60_ambulance_siren.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi8.audio(audio_file_test_bytes, start_time=0)
     df = pd.DataFrame({'1': [st.session_state.key], '2': ['救急車のサイレン'], '3': [select1], '4': [select2], '5': [select3]})
