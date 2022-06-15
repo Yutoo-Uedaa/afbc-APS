@@ -189,10 +189,10 @@ if st.session_state.count == -7:
     sizi = st.empty()
     sizi.header('２．鐘の音')
     sizi2 = st.empty()
-    # sizi2.write('リファレンス音源\n何回聞いても問題ありません')
+    sizi2.write('リファレンス音源\n何回聞いても問題ありません')
     # audio_file=open('Test1_reference_60_classics.wav','rb')
     # audio_file_test_bytes = audio_file.read()
-    sizi2.audio(audio_file_test_bytes, start_time=0)
+    # sizi2.audio(audio_file_test_bytes, start_time=0)
     # AFC/FS
     sel1 = st.empty()
     select1=sel1.radio('２－１．よりリファレンス音源に近い音源を選択してください。',('1','2'))
