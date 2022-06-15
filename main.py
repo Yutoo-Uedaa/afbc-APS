@@ -81,7 +81,6 @@ if st.session_state.count == -3:
         explain.empty()
         sizi.empty()
         sizi2.empty()
-        sizi3.empty()
         st.session_state.count = -2
         # csv_file = os.listdir(conf.exp_folder_path + '/result_each_subject')
   
