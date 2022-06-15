@@ -50,8 +50,6 @@ if 'count' not in st.session_state: #ページ番号をつかさどっている
     st.session_state.count = -2
 if 'group' not in st.session_state:
     st.session_state.group = -1
-if 'group' not in st.session_state:
-    st.session_state.group = 1
 if 'key' not in st.session_state:
     st.session_state.key = 'value'
 if 'time' not in st.session_state:
@@ -99,9 +97,13 @@ if st.session_state.count == -1:
     sizi3.write('※まだ実験は始まっていません')
     
     if st.button('実験を始める'):
-        st.session_state.group == 1
+        explainBef.empty()
+        explain.empty()
+        sizi.empty()
+        sizi2.empty()
+        st.session_state.group == 0
     
-if st.session_state.group == 1:    
+if st.session_state.group >= 0:    
     st.header('１．クラシック')
     st.write('リファレンス音源\n何回聞いても問題ありません')
     audio_file=open('Test1_reference_60_classics.wav','rb')
