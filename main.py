@@ -151,7 +151,7 @@ if st.session_state.count == -7:
     st.write(' 音源1')
     st.write(' 音源2')
     
-    next3_button=st.from_next3_button('次の音源へ')
+    next3_button=st.from_next3_button('次の音源')
     if next3_button:
         st.session_state.count = -6
 
