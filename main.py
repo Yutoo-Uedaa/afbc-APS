@@ -132,18 +132,23 @@ if st.session_state.count == -3:
     df = pd.DataFrame({'1': [select1], '2': [select2], '3': [select3],})
     st.dataframe(df)
     
-    wine = pd.read_csv("data/out.csv")
-    st.dataframe(wine)
+
     
 
     
     if st.button("終了"):
         # df.to_csv("output.csv",index = False,encoding = "utf_8_sig)
-        df.to_csv('data/out.csv', mode='a',
+        df.to_csv('data/out1.csv', mode='a',
                       header=False, index=False,
                       encoding='utf_8_sig')
         st.write(select1,select2,select3)
+        st.write('結果')
+        wine = pd.read_csv("data/out1.csv")
+        st.dataframe(wine)
+        
         st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')
+        
+        
         st.balloons()
         st.stop()
 
