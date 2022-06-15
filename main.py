@@ -98,13 +98,16 @@ if st.session_state.count == -9:
     sizi3 = st.empty()
     sizi3.write('※まだ実験は始まっていません')
     
-    start_button=st.button('実験を始める')
+    start = st.empty()
+    with start.from("my_form2"):
+        start_button=st.button('実験を始める')
     if start_button:
         df = pd.DataFrame({'1': ['名前'], '2': ['音源'], '3': ['テスト１'], '4': ['テスト２'], '5': ['テスト３']})
         df.to_csv('data/outresult_sample1.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
+        start.empty()
         st.session_state.count = -8
         
 # クラシック  
@@ -129,22 +132,22 @@ if st.session_state.count == -8:
     st.audio(audio_file_2.read())
     # AFC/B-PEM-AFC
     select2=st.radio('１ー２．リファレンス音源に近い音源を選択してください。',('1','2'))
-    sizi3 = st.empty()
-    sizi3.write(' 音源1')
+    sizi5 = st.empty()
+    sizi5.write(' 音源1')
     audio_file_3=open('Test1_AFC_60_classics.wav','rb')
     st.audio(audio_file_3.read())
-    sizi4 = st.empty()
-    sizi4.write(' 音源2')
+    sizi6 = st.empty()
+    sizi6.write(' 音源2')
     audio_file_4=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     st.audio(audio_file_4.read())
     # FS-AFC/B-PEM-AFC
     select3=st.radio('１ー３．リファレンス音源に近い音源を選択してください。',('1','2'))
-    sizi3 = st.empty()
-    sizi3.write(' 音源1')
+    sizi7 = st.empty()
+    sizi7.write(' 音源1')
     audio_file_5=open('Test1_FS_AFC_60_classics.wav','rb')
     st.audio(audio_file_5.read())
-    sizi4 = st.empty()
-    sizi4.write(' 音源2')
+    sizi8 = st.empty()
+    sizi8.write(' 音源2')
     audio_file_6=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     st.audio(audio_file_6.read())
     df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [select1], '4': [select2], '5': [select3]})
@@ -157,6 +160,10 @@ if st.session_state.count == -8:
         sizi2.empty()
         sizi3.empty()
         sizi4.empty()
+        sizi5.empty()
+        sizi6.empty()
+        sizi7.empty()
+        sizi8.empty()
         st.session_state.count = -7
     
 
@@ -165,7 +172,7 @@ if st.session_state.count == -7:
     my_bar = st.progress(0)
     my_bar.progress(int(100/6*2))
     sizi = st.empty()
-    sizi.header('１．鐘の音')
+    sizi.header('２．鐘の音')
     sizi2 = st.empty()
     sizi2.write('リファレンス音源\n何回聞いても問題ありません')
      # AFC/FS
@@ -179,21 +186,21 @@ if st.session_state.count == -7:
     # audio_file_2=open('Test1_FS_AFC_60_classics.wav','rb')
     # st.audio(audio_file_2.read())
     select2=st.radio('２－２．よりリファレンス音源に近い音源を選択してください。',('1','2'))
-    sizi3 = st.empty()
-    sizi3.write(' 音源1')
+    sizi5 = st.empty()
+    sizi5.write(' 音源1')
     # audio_file1=open('Test1_AFC_60_classics.wav','rb')
     # st.audio(audio_file1.read())
-    sizi4 = st.empty()
-    sizi4.write(' 音源2')
+    sizi6 = st.empty()
+    sizi6.write(' 音源2')
     # audio_file_2=open('Test1_FS_AFC_60_classics.wav','rb')
     # st.audio(audio_file_2.read())
     select3=st.radio('２－３．よりリファレンス音源に近い音源を選択してください。',('1','2'))
-    sizi3 = st.empty()
-    sizi3.write(' 音源1')
+    sizi7 = st.empty()
+    sizi7.write(' 音源1')
     # audio_file1=open('Test1_AFC_60_classics.wav','rb')
     # st.audio(audio_file1.read())
-    sizi4 = st.empty()
-    sizi4.write(' 音源2')
+    sizi8 = st.empty()
+    sizi8.write(' 音源2')
     # audio_file_2=open('Test1_FS_AFC_60_classics.wav','rb')
     # st.audio(audio_file_2.read())    
     df = pd.DataFrame({'1': [st.session_state.key], '2': ['鐘の音'], '3': [select1], '4': [select2], '5': [select3]})
@@ -206,6 +213,10 @@ if st.session_state.count == -7:
         sizi2.empty()
         sizi3.empty()
         sizi4.empty()
+        sizi5.empty()
+        sizi6.empty()
+        sizi7.empty()
+        sizi8.empty()
         st.session_state.count = -6
 
 #　救急車のさいれん
@@ -254,6 +265,10 @@ if st.session_state.count == -6:
         sizi2.empty()
         sizi3.empty()
         sizi4.empty()
+        sizi5.empty()
+        sizi6.empty()
+        sizi7.empty()
+        sizi8.empty()
         st.session_state.count = -5
  
 if st.session_state.count == -5:
