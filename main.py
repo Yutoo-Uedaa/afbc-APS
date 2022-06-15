@@ -141,6 +141,7 @@ if st.session_state.count == -3:
         st.session_state.count = -2
     
 if st.session_state.count == -2:
+    my_bar = st.progress(0)
     my_bar.progress(int(100/6*2))
     st.header('2．鐘の音')
     st.write('リファレンス音源\n何回聞いても問題ありません')
