@@ -139,7 +139,7 @@ if st.session_state.count >= 0:
     my_bar.progress(int(100/6*1))
         
     st.write(st.session_state.key)
-    df = pd.DataFrame({'1': [sub_name], '2': [sub_age], '3': [select1], '4': [select2],  '5': [select3]})
+    df = pd.DataFrame({'1': [st.session_state.key], '2': [select1], '3': [select2], '4': [select2]})
     st.dataframe(df)
     
 
