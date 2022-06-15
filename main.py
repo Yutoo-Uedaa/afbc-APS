@@ -60,9 +60,9 @@ if 'time' not in st.session_state:
     st.session_state.time = 0
 if 'time2' not in st.session_state:
     st.session_state.time2 = 0    
-
-st.title('APS評価実験')
-if st.session_state.count == -4:   
+    
+if st.session_state.count == -4:  
+    st.title('APS評価実験') 
     explainBef = st.empty()
     with explainBef.expander("実験の説明", True):
         st.write(kyouji)
