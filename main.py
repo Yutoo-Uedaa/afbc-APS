@@ -232,13 +232,13 @@ if st.session_state.count == -7:
     # audio_file=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     # audio_file_test_bytes = audio_file.read()
     # sizi8.audio(audio_file_test_bytes, start_time=0)
-    df2 = pd.DataFrame({'1': [st.session_state.key], '2': ['鐘の音'], '3': [select1], '4': [select2], '5': [select3]})
+    df = pd.DataFrame({'1': [st.session_state.key], '2': ['鐘の音'], '3': [select1], '4': [select2], '5': [select3]})
     # st.dataframe(df)
     
     nex=st.empty()
     next3_button=nex.button('次の音源(救急車のサイレン)へ')
     if next3_button:
-        #df.to_csv('data/outresult_sample1.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
+        df.to_csv('data/outresult_sample1.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -308,7 +308,6 @@ if st.session_state.count == -6:
    
     nex=st.empty()
     if nex.button("終了"):
-        df2.to_csv('data/outresult_sample1.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         df.to_csv('data/outresult_sample1.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
