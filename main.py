@@ -247,7 +247,7 @@ if st.session_state.count == -6:
    
 
     if st.button("終了"):
-        st.session_state.count == -5
+        st.session_state.count = -5
  
 if st.session_state.count == -5:
     st.write('結果')
