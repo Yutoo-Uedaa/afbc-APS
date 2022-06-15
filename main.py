@@ -135,8 +135,10 @@ if st.session_state.count == -8:
     st.write(' 音源2')
     audio_file_6=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     st.audio(audio_file_6.read())
-    my_bar.progress(int(100/6*1))
     
+    st.out_data1.key = str(select1)
+    st.out_data2.key = str(select2)
+    st.out_data3.key = str(select3)
     
         
     next2_button=st.button('次の音源(鐘の音)へ')
@@ -171,10 +173,10 @@ if st.session_state.count == -6:
     
     if st.button("終了"):
         st.write(st.session_state.key)
-        # st.write(select1)
-        # st.write(select2)
-        # st.write(select3)
-        st.write(select4)
+        st.write(st.out_data1.key)
+        st.write(st.out_data2.key)
+        st.write(st.out_data3.key)
+        # st.write(select4)
         st.write(select7)
         # df = pd.DataFrame({'1': [st.session_state.key], '2': [select1], '3': [select2], '4': [select3], '5': [select5],'6': [select7]})
         st.dataframe(df)
