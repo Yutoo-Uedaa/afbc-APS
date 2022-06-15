@@ -150,7 +150,7 @@ if st.session_state.count == -2:
     st.write(' 音源1')
     st.write(' 音源2')
     
-    if st.next2_button('次の音源へ'):
+    if st.button('次の音源'):
         st.session_state.count = -1
 
 if st.session_state.count == -1:
