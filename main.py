@@ -163,7 +163,8 @@ if st.session_state.count == -8:
     df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [select1], '4': [select2], '5': [select3]})
     st.dataframe(df)
     
-    next2_button=st.button('次の音源(鐘の音)へ')
+    nex=st.empty()
+    next2_button=nex.button('次の音源(鐘の音)へ')
     if next2_button:
         df.to_csv('data/outresult_sample1.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
@@ -177,6 +178,7 @@ if st.session_state.count == -8:
         sel1.empty()
         sel2.empty()
         sel3.empty()
+        nex.empty
         st.session_state.count = -7
     
 
