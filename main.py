@@ -178,7 +178,7 @@ if st.session_state.count == -8:
         sel1.empty()
         sel2.empty()
         sel3.empty()
-        nex.empty
+        nex.empty()
         st.session_state.count = -7
     
 
@@ -219,7 +219,7 @@ if st.session_state.count == -7:
     # audio_file_2=open('Test1_FS_AFC_60_classics.wav','rb')
     # st.audio(audio_file_2.read())    
     df = pd.DataFrame({'1': [st.session_state.key], '2': ['鐘の音'], '3': [select1], '4': [select2], '5': [select3]})
-    st.dataframe(df)
+    # st.dataframe(df)
     
     next3_button=st.button('次の音源(救急車のサイレン)へ')
     if next3_button:
