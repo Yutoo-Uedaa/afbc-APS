@@ -137,7 +137,7 @@ if st.session_state.count == -3:
     st.audio(audio_file_6.read())
     my_bar.progress(int(100/6*1))
         
-    if st.button('次の音源へ')
+    if st.button('次の音源へ'):
         st.session_state.count == -2
     
 if st.session_state.count == -2:
