@@ -106,22 +106,25 @@ if st.session_state.count == -9:
 if st.session_state.count == -8:
     my_bar = st.progress(0)
     my_bar.progress(int(100/6*1))
-    st.header('１．クラシック')
-    st.write('リファレンス音源\n何回聞いても問題ありません')
+    sizi = st.empty()
+    size.header('１．クラシック')
+    size2.empty()
+    size2.write('リファレンス音源\n何回聞いても問題ありません')
     audio_file=open('Test1_reference_60_classics.wav','rb')
     st.audio(audio_file.read())
     # AFC/FS
-    st.write('１ー１．')
-    select1=st.radio('よりリファレンス音源に近い音源を選択してください。',('1','2'))
-    st.write(' 音源1')
+    select1=st.radio('１－１．よりリファレンス音源に近い音源を選択してください。',('1','2'))
+    size3.empty
+    size3.write(' 音源1')
     audio_file1=open('Test1_AFC_60_classics.wav','rb')
     st.audio(audio_file1.read())
-    st.write(' 音源2')
+    size4.empty
+    size4.write(' 音源2')
     audio_file_2=open('Test1_FS_AFC_60_classics.wav','rb')
     st.audio(audio_file_2.read())
     # AFC/B-PEM-AFC
     select2=st.radio('１ー２．リファレンス音源に近い音源を選択してください。',('1','2'))
-    st.write(' 音源1')
+    size3.write
     audio_file_3=open('Test1_AFC_60_classics.wav','rb')
     st.audio(audio_file_3.read())
     st.write(' 音源2')
@@ -136,9 +139,6 @@ if st.session_state.count == -8:
     audio_file_6=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     st.audio(audio_file_6.read())
     
-    st.out_data1.key = str(select1)
-    st.out_data2.key = str(select2)
-    st.out_data3.key = str(select3)
     
         
     next2_button=st.button('次の音源(鐘の音)へ')
