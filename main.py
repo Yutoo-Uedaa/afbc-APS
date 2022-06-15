@@ -76,9 +76,11 @@ if st.session_state.count == -2:
         submitted = st.form_submit_button("次へ")
 
     if submitted and sub_name != "":
+        name=sub_name
+        age=sub_age
         # st.session_state.key = str(deyTimeCheck(str(sub_name), str(sub_age)))
         explainBef.empty()
-        # explain.empty()
+        explain.empty()
         sizi.empty()
         sizi2.empty()
         st.session_state.count = -1
@@ -138,8 +140,8 @@ if st.session_state.count >= 0:
     st.audio(audio_file_6.read())
     my_bar.progress(int(100/6*1))
         
-    st.write(sub_name)
-    st.write(sub_age)
+    st.write(name)
+    st.write(age)
     df = pd.DataFrame({'1': [sub_name], '2': [sub_age], '3': [select1], '4': [select2],  '5': [select3]})
     st.dataframe(df)
     
