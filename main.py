@@ -100,9 +100,9 @@ if st.session_state.count == -1:
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
-        st.session_state.group == 0
+        st.session_state.count == 0
     
-if st.session_state.group >= 0:    
+if st.session_state.count >= 0:    
     st.header('１．クラシック')
     st.write('リファレンス音源\n何回聞いても問題ありません')
     audio_file=open('Test1_reference_60_classics.wav','rb')
