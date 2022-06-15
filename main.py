@@ -104,7 +104,6 @@ if st.session_state.count == -4:
         st.session_state.count = -3
     
 if st.session_state.count == -3:
-    st.session_state.time = time.time()
     my_bar = st.progress(0)
     my_bar.progress(int(100/6*1))
     st.header('１．クラシック')
@@ -138,6 +137,28 @@ if st.session_state.count == -3:
     st.audio(audio_file_6.read())
     my_bar.progress(int(100/6*1))
         
+    if st.button('次の音源へ')
+        st.session_state.count == -2
+    
+if st.session_state.count == -2:
+    my_bar = st.progress(0)
+    my_bar.progress(int(100/6*1))
+    st.header('2．鐘の音')
+    st.write('リファレンス音源\n何回聞いても問題ありません')
+    audio_file=open('Test1_reference_60_classics.wav','rb')
+    st.audio(audio_file.read())
+    # AFC/FS
+    st.write('１ー１．')
+    select1=st.radio('よりリファレンス音源に近い音源を選択してください。',('1','2'))
+    st.write(' 音源1')
+    audio_file1=open('Test1_AFC_60_classics.wav','rb')
+    st.audio(audio_file1.read())
+    st.write(' 音源2')
+    audio_file_2=open('Test1_FS_AFC_60_classics.wav','rb')
+    st.audio(audio_file_2.read())
+      
+   
+  
     st.write(st.session_state.key)
     df = pd.DataFrame({'1': [st.session_state.key], '2': [select1], '3': [select2], '4': [select3]})
     st.dataframe(df)
