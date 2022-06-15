@@ -164,16 +164,13 @@ if st.session_state.count == -6:
     select7=st.radio('３ー１．リファレンス音源に近い音源を選択してください。',('1','2'))
     st.write(' 音源1')
     st.write(' 音源2')
-      
    
-  
-    st.write(st.session_state.key)
-    df = pd.DataFrame({'1': [st.session_state.key], '2': [select1], '3': [select2], '4': [select3], '5': [select5],'6': [select7]})
-    st.dataframe(df)
-    
 
     
     if st.button("終了"):
+        st.write(st.session_state.key)
+        df = pd.DataFrame({'1': [st.session_state.key], '2': [select1], '3': [select2], '4': [select3], '5': [select5],'6': [select7]})
+        st.dataframe(df)
         # df.to_csv("output.csv",index = False,encoding = "utf_8_sig)
         df.to_csv('data/outresult_sample.csv', mode='a',
                       header=False, index=False,
