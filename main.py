@@ -107,24 +107,24 @@ if st.session_state.count == -8:
     my_bar = st.progress(0)
     my_bar.progress(int(100/6*1))
     sizi = st.empty()
-    size.header('１．クラシック')
-    size2.empty()
-    size2.write('リファレンス音源\n何回聞いても問題ありません')
+    sizi.header('１．クラシック')
+    sizi2.empty()
+    sizi2.write('リファレンス音源\n何回聞いても問題ありません')
     audio_file=open('Test1_reference_60_classics.wav','rb')
     st.audio(audio_file.read())
     # AFC/FS
     select1=st.radio('１－１．よりリファレンス音源に近い音源を選択してください。',('1','2'))
-    size3.empty
-    size3.write(' 音源1')
+    sizi3.empty
+    sizi3.write(' 音源1')
     audio_file1=open('Test1_AFC_60_classics.wav','rb')
     st.audio(audio_file1.read())
-    size4.empty
-    size4.write(' 音源2')
+    sizi4.empty
+    sizi4.write(' 音源2')
     audio_file_2=open('Test1_FS_AFC_60_classics.wav','rb')
     st.audio(audio_file_2.read())
     # AFC/B-PEM-AFC
     select2=st.radio('１ー２．リファレンス音源に近い音源を選択してください。',('1','2'))
-    size3.write
+    sizi3.write
     audio_file_3=open('Test1_AFC_60_classics.wav','rb')
     st.audio(audio_file_3.read())
     st.write(' 音源2')
