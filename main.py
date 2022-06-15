@@ -157,7 +157,7 @@ if st.session_state.count == -1:
     st.header('3．救急車のサイレン')
     st.write('リファレンス音源\n何回聞いても問題ありません')
     # AFC/FS
-    select=st.radio('３ー１．リファレンス音源に近い音源を選択してください。',('1','2'))
+    select7=st.radio('３ー１．リファレンス音源に近い音源を選択してください。',('1','2'))
     st.write(' 音源1')
     st.write(' 音源2')
       
