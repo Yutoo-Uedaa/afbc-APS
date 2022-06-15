@@ -75,7 +75,7 @@ with explain.form("my_form"):
     submitted = st.form_submit_button("次へ")
 
 if submitted and sub_name != "":
-    st.session_state.key = str(deyTimeCheck(str(sub_name), str(sub_age)))
+    # st.session_state.key = str(deyTimeCheck(str(sub_name), str(sub_age)))
     explainBef.empty()
     explain.empty()
     sizi.empty()
@@ -96,6 +96,10 @@ if st.session_state.count == -3:
     sizi3 = st.empty()
     sizi3.write('※まだ実験は始まっていません')
     
+    if st.button('実験を始める'):
+        st.session_state.count == -3
+    
+if st.session_state.count == -3:    
     st.header('１．クラシック')
     st.write('リファレンス音源\n何回聞いても問題ありません')
     audio_file=open('Test1_reference_60_classics.wav','rb')
@@ -126,10 +130,47 @@ if st.session_state.count == -3:
     audio_file_6=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     st.audio(audio_file_6.read())
     
-    st.button("次へ")
+    if st.button("次へ"):
+        st.session_state.count == -2
+
+if st.session_state.count == -2:
+    st.header('１．鐘の音')
+    st.write('リファレンス音源\n何回聞いても問題ありません')
+    audio_file=open('Test1_reference_60_classics.wav','rb')
+    st.audio(audio_file.read())
+    # AFC/FS
+    st.write('１ー１．')
+    select1=st.radio('よりリファレンス音源に近い音源を選択してください。',('1','2'))
+    st.write(' 音源1')
+    audio_file1=open('Test1_AFC_60_classics.wav','rb')
+    st.audio(audio_file1.read())
+    st.write(' 音源2')
+    audio_file_2=open('Test1_FS_AFC_60_classics.wav','rb')
+    st.audio(audio_file_2.read())
+    # AFC/B-PEM-AFC
+    select2=st.radio('１ー２．リファレンス音源に近い音源を選択してください。',('1','2'))
+    st.write(' 音源1')
+    audio_file_3=open('Test1_AFC_60_classics.wav','rb')
+    st.audio(audio_file_3.read())
+    st.write(' 音源2')
+    audio_file_4=open('Test1_B_PEM_AFC_60_classics.wav','rb')
+    st.audio(audio_file_4.read())
+    # FS-AFC/B-PEM-AFC
+    select3=st.radio('１ー３．リファレンス音源に近い音源を選択してください。',('1','2'))
+    st.write(' 音源1')
+    audio_file_5=open('Test1_FS_AFC_60_classics.wav','rb')
+    st.audio(audio_file_5.read())
+    st.write(' 音源2')
+    audio_file_6=open('Test1_B_PEM_AFC_60_classics.wav','rb')
+    st.audio(audio_file_6.read())
+    
+    if st.button("次へ"):
+        st.session_state.count == -2
     
     
-    df = pd.DataFrame({'1': [select1], '2': [select2], '3': [select3],})
+    df = pd.DataFrame({'1': [sub_name], '2': [sub_age], '3': [select1],
+                       '4': [select2],  '5': [select3]})
+    
     st.dataframe(df)
     
 
@@ -138,12 +179,12 @@ if st.session_state.count == -3:
     
     if st.button("終了"):
         # df.to_csv("output.csv",index = False,encoding = "utf_8_sig)
-        df.to_csv('data/out1.csv', mode='a',
+        df.to_csv('data/outresult_sample.csv', mode='a',
                       header=False, index=False,
                       encoding='utf_8_sig')
         st.write(select1,select2,select3)
         st.write('結果')
-        wine = pd.read_csv("data/out1.csv")
+        wine = pd.read_csv("data/outresult_sample.csv")
         st.dataframe(wine)
         
         st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')
