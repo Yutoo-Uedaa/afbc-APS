@@ -96,7 +96,8 @@ if st.session_state.count == -1:
     sizi3 = st.empty()
     sizi3.write('※まだ実験は始まっていません')
     
-    if st.button('実験を始める'):
+    start_button=st.button('実験を始める')
+    if start_button:
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
