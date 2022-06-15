@@ -47,7 +47,7 @@ def format_func3(option):
     return CHOICES3[option]
 
 if 'count' not in st.session_state: #ページ番号をつかさどっている
-    st.session_state.count = -5
+    st.session_state.count = -10
 if 'group' not in st.session_state:
     st.session_state.group = -1
 if 'key' not in st.session_state:
@@ -57,7 +57,7 @@ if 'time' not in st.session_state:
 if 'time2' not in st.session_state:
     st.session_state.time2 = 0    
     
-if st.session_state.count == -5:  
+if st.session_state.count == -10:  
     st.title('APS評価実験') 
     explainBef = st.empty()
     with explainBef.expander("実験の説明", True):
@@ -81,14 +81,14 @@ if st.session_state.count == -5:
         explain.empty()
         sizi.empty()
         sizi2.empty()
-        st.session_state.count = -4
+        st.session_state.count = -9
         # csv_file = os.listdir(conf.exp_folder_path + '/result_each_subject')
   
     elif submitted:
         st.warning('名前を入力して下さい')
     
     
-if st.session_state.count == -4:
+if st.session_state.count == -9:
     sizi = st.empty()
     sizi.subheader('提示音サンプル')
     sizi2 = st.empty()
@@ -101,9 +101,9 @@ if st.session_state.count == -4:
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
-        st.session_state.count = -3
+        st.session_state.count = -8
     
-if st.session_state.count == -3:
+if st.session_state.count == -8:
     my_bar = st.progress(0)
     my_bar.progress(int(100/6*1))
     st.header('１．クラシック')
@@ -137,10 +137,11 @@ if st.session_state.count == -3:
     st.audio(audio_file_6.read())
     my_bar.progress(int(100/6*1))
         
-    if st.button('次の音源へ'):
-        st.session_state.count = -2
+    next2_button=st.button('次の音源へ')
+    if next_button:
+        st.session_state.count = -7
     
-if st.session_state.count == -2:
+if st.session_state.count == -7:
     my_bar = st.progress(0)
     my_bar.progress(int(100/6*2))
     st.header('2．鐘の音')
@@ -150,10 +151,11 @@ if st.session_state.count == -2:
     st.write(' 音源1')
     st.write(' 音源2')
     
-    if st.button('次の音源'):
-        st.session_state.count = -1
+    next3_button=st.button('次の音源へ')
+    if :
+        st.session_state.count = -6
 
-if st.session_state.count == -1:
+if st.session_state.count == -6:
     st.header('3．救急車のサイレン')
     st.write('リファレンス音源\n何回聞いても問題ありません')
     # AFC/FS
