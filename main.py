@@ -144,7 +144,7 @@ if st.session_state.count == -8:
     sizi4.write(' 音源2')
     audio_file_6=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     st.audio(audio_file_6.read())
-    df = pd.DataFrame({'1': [st.session_state.key], '2': [クラシック], '3': [select1], '4': [select2], '5': [select3]})
+    df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [select1], '4': [select2], '5': [select3]})
     
     next2_button=st.button('次の音源(鐘の音)へ')
     if next2_button:
