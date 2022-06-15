@@ -5,6 +5,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import pickle
+import csv
 
 
 
@@ -135,7 +136,7 @@ if st.session_state.count == -3:
     
     if st.button("終了"):
         # df.to_csv("output.csv",index = False,encoding = "utf_8_sig)
-        df.to_csv('data/out.csv', mode='a',
+        df.to_csv('data/out1.csv', mode='a',
                       header=False, index=False,
                       encoding='utf_8_sig')
         st.write(select1,select2,select3)
