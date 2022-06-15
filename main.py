@@ -78,7 +78,7 @@ if st.session_state.count == -2:
     if submitted and sub_name != "":
         # st.session_state.key = str(deyTimeCheck(str(sub_name), str(sub_age)))
         explainBef.empty()
-        explain.empty()
+        # explain.empty()
         sizi.empty()
         sizi2.empty()
         st.session_state.count = -1
