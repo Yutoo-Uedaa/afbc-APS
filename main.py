@@ -169,6 +169,11 @@ if st.session_state.count == -6:
     
     if st.button("終了"):
         st.write(st.session_state.key)
+        st.write(select1)
+        st.write(select2)
+        st.write(select3)
+        st.write(select4)
+        st.write(select7)
         df = pd.DataFrame({'1': [st.session_state.key], '2': [select1], '3': [select2], '4': [select3], '5': [select5],'6': [select7]})
         st.dataframe(df)
         # df.to_csv("output.csv",index = False,encoding = "utf_8_sig)
