@@ -137,7 +137,7 @@ if st.session_state.count == -8:
     st.audio(audio_file_6.read())
     my_bar.progress(int(100/6*1))
         
-    next2_button=st.from_next2_button('次の音源へ')
+    next2_button=st.button('次の音源(鐘の音)へ')
     if next2_button:
         st.session_state.count = -7
     
@@ -151,7 +151,7 @@ if st.session_state.count == -7:
     st.write(' 音源1')
     st.write(' 音源2')
     
-    next3_button=st.from_next3_button('次の音源')
+    next3_button=st.button('次の音源(救急車のサイレン)へ')
     if next3_button:
         st.session_state.count = -6
 
