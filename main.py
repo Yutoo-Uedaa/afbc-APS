@@ -97,10 +97,9 @@ if st.session_state.count == -1:
     sizi3.write('※まだ実験は始まっていません')
     
     if st.button('実験を始める'):
-        explainBef.empty()
-        explain.empty()
         sizi.empty()
         sizi2.empty()
+        sizi3.empty()
         st.session_state.group == 0
     
 if st.session_state.group >= 0:    
