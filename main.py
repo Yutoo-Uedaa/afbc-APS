@@ -101,7 +101,7 @@ if st.session_state.count == -1:
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
-        st.session_state.count == 0
+        st.session_state.count = 0
     
 if st.session_state.count >= 0:    
     st.header('１．クラシック')
