@@ -178,6 +178,7 @@ if st.session_state.count == -8:
         sel2.empty()
         sel3.empty()
         nex.empty()
+        my_bar.empty()
         st.session_state.count = -7
     
 
@@ -250,6 +251,7 @@ if st.session_state.count == -7:
         sel2.empty()
         sel3.empty()
         nex.empty()
+        my_bar.empty()
         st.session_state.count = -6
 
 #　救急車のさいれん
