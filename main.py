@@ -303,7 +303,7 @@ if st.session_state.count == -6:
     audio_file_test_bytes = audio_file.read()
     sizi8.audio(audio_file_test_bytes, start_time=0)
     df = pd.DataFrame({'1': [st.session_state.key], '2': ['救急車のサイレン'], '3': [select1], '4': [select2], '5': [select3]})
-    st.dataframe(df)
+    #st.dataframe(df)
    
     nex=st.empty()
     if nex.button("終了"):
@@ -320,11 +320,12 @@ if st.session_state.count == -6:
         sel2.empty()
         sel3.empty()
         nex.empty()
+        my_bar.empty()
         st.session_state.count = -5
  
 if st.session_state.count == -5:
     my_bar = st.progress(0)
-    my_bar.progress(int(100/6*3))
+    my_bar.progress(int(100/6*6))
     st.write('結果')
     wine = pd.read_csv("data/outresult_sample2.csv")
     st.dataframe(wine)
