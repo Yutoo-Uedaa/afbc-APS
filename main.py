@@ -104,6 +104,7 @@ if st.session_state.count == -1:
         st.session_state.count = 0
     
 if st.session_state.count >= 0:
+    st.session_state.time = time.time()
     my_bar = st.progress(0)
     my_bar.progress(int(100/6*1))
     st.header('１．クラシック')
@@ -135,19 +136,22 @@ if st.session_state.count >= 0:
     st.write(' 音源2')
     audio_file_6=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     st.audio(audio_file_6.read())
+    my_bar.progress(int(100/6*1))
     
     if st.button("次へ"):
+        st.session_state.time2 = time.time()
         st.header('１．鐘の音')
         st.write('リファレンス音源\n何回聞いても問題ありません')
-        df = pd.DataFrame({'1': [sub_name], '2': [sub_age], '3': [select1],
-                       '4': [select2],  '5': [select3]})
-        st.dataframe(df)
+
     
 
     
 
     
     if st.button("終了"):
+        df = pd.DataFrame({'1': [sub_name], '2': [sub_age], '3': [select1],
+                           '4': [select2],  '5': [select3]})
+        st.dataframe(df)
         # df.to_csv("output.csv",index = False,encoding = "utf_8_sig)
         df.to_csv('data/outresult_sample.csv', mode='a',
                       header=False, index=False,
