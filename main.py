@@ -156,6 +156,8 @@ if st.session_state.count == -7:
         st.session_state.count = -6
 
 if st.session_state.count == -6:
+    my_bar = st.progress(0)
+    my_bar.progress(int(100/6*3))
     st.header('3．救急車のサイレン')
     st.write('リファレンス音源\n何回聞いても問題ありません')
     # AFC/FS
@@ -166,7 +168,7 @@ if st.session_state.count == -6:
    
   
     st.write(st.session_state.key)
-    df = pd.DataFrame({'1': [st.session_state.key], '2': [select1], '3': [select2], '4': [select3]})
+    df = pd.DataFrame({'1': [st.session_state.key], '2': [select1], '3': [select2], '4': [select3], '5': [select5],'6': [select7]})
     st.dataframe(df)
     
 
