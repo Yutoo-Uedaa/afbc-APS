@@ -141,21 +141,26 @@ if st.session_state.count == -3:
         st.session_state.count = -2
     
 if st.session_state.count == -2:
-    my_bar = st.progress(0)
-    my_bar.progress(int(100/6*1))
+    my_bar.progress(int(100/6*2))
     st.header('2．鐘の音')
     st.write('リファレンス音源\n何回聞いても問題ありません')
-    audio_file=open('Test1_reference_60_classics.wav','rb')
-    st.audio(audio_file.read())
     # AFC/FS
     st.write('１ー１．')
-    select1=st.radio('よりリファレンス音源に近い音源を選択してください。',('1','2'))
+    select4=st.radio('よりリファレンス音源に近い音源を選択してください。',('1','2'))
     st.write(' 音源1')
-    audio_file1=open('Test1_AFC_60_classics.wav','rb')
-    st.audio(audio_file1.read())
     st.write(' 音源2')
-    audio_file_2=open('Test1_FS_AFC_60_classics.wav','rb')
-    st.audio(audio_file_2.read())
+    
+    if st.button('次の音源へ'):
+        st.session_state.count = -1
+
+if st.session_state.count == -1:
+    st.header('3．救急車のサイレン')
+    st.write('リファレンス音源\n何回聞いても問題ありません')
+    # AFC/FS
+    st.write('１ー１．')
+    select=st.radio('よりリファレンス音源に近い音源を選択してください。',('1','2'))
+    st.write(' 音源1')
+    st.write(' 音源2')
       
    
   
