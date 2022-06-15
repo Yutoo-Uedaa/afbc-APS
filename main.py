@@ -52,6 +52,8 @@ if 'group' not in st.session_state:
     st.session_state.group = -1
 if 'key' not in st.session_state:
     st.session_state.key = 'value'
+if 'key' not in st.session_state: #結果
+    st.result1.data = 'value'
 if 'time' not in st.session_state:
     st.session_state.time = 0
 if 'time2' not in st.session_state:
@@ -128,22 +130,29 @@ if st.session_state.count == -8:
     sizi3.write(' 音源1')
     audio_file_3=open('Test1_AFC_60_classics.wav','rb')
     st.audio(audio_file_3.read())
-    st.write(' 音源2')
+    sizi4 = st.empty()
+    sizi4.write(' 音源2')
     audio_file_4=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     st.audio(audio_file_4.read())
     # FS-AFC/B-PEM-AFC
     select3=st.radio('１ー３．リファレンス音源に近い音源を選択してください。',('1','2'))
-    st.write(' 音源1')
+    sizi3 = st.empty()
+    sizi3.write(' 音源1')
     audio_file_5=open('Test1_FS_AFC_60_classics.wav','rb')
     st.audio(audio_file_5.read())
-    st.write(' 音源2')
+    sizi4 = st.empty()
+    sizi4.write(' 音源2')
     audio_file_6=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     st.audio(audio_file_6.read())
     
-    
-        
     next2_button=st.button('次の音源(鐘の音)へ')
     if next2_button:
+        df = pd.DataFrame({'1': [st.session_state.key], '2': [クラシック], '3': [select1], '4': [select2], '5': [select3]})
+        df.to_csv('data/outresult_sample.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
+        sizi.empty()
+        sizi2.empty()
+        sizi3.empty()
+        sizi4.empty()
         st.session_state.count = -7
     
 if st.session_state.count == -7:
@@ -152,12 +161,14 @@ if st.session_state.count == -7:
     st.header('2．鐘の音')
     st.write('リファレンス音源\n何回聞いても問題ありません')
     # AFC/FS
-    select4=st.radio('２ー１．よりリファレンス音源に近い音源を選択してください。',('1','2'))
+    select1=st.radio('２ー１．よりリファレンス音源に近い音源を選択してください。',('1','2'))
     st.write(' 音源1')
     st.write(' 音源2')
     
     next3_button=st.button('次の音源(救急車のサイレン)へ')
     if next3_button:
+        df = pd.DataFrame({'1': [st.session_state.key], '2': [クラシック], '3': [select1], '4': [select2], '5': [select3]})
+        df.to_csv('data/outresult_sample.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         st.session_state.count = -6
 
 if st.session_state.count == -6:
@@ -173,18 +184,9 @@ if st.session_state.count == -6:
 
     
     if st.button("終了"):
-        st.write(st.session_state.key)
-        st.write(st.out_data1.key)
-        st.write(st.out_data2.key)
-        st.write(st.out_data3.key)
-        # st.write(select4)
-        st.write(select7)
-        # df = pd.DataFrame({'1': [st.session_state.key], '2': [select1], '3': [select2], '4': [select3], '5': [select5],'6': [select7]})
+        df = pd.DataFrame({'1': [st.session_state.key], '2': [select1], '3': [select2], '4': [select3], '5': [select5],'6': [select7]})
         st.dataframe(df)
         # df.to_csv("output.csv",index = False,encoding = "utf_8_sig)
-        df.to_csv('data/outresult_sample.csv', mode='a',
-                      header=False, index=False,
-                      encoding='utf_8_sig')
         st.write(select1,select2,select3)
         st.write('結果')
         wine = pd.read_csv("data/outresult_sample.csv")
