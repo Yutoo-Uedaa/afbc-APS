@@ -149,8 +149,7 @@ if st.session_state.count >= 0:
 
     
     if st.button("終了"):
-        df = pd.DataFrame({'1': [sub_name], '2': [sub_age], '3': [select1],
-                           '4': [select2],  '5': [select3]})
+        df = pd.DataFrame({'1': [sub_name], '2': [sub_age], '3': [select1], '4': [select2],  '5': [select3]})
         st.dataframe(df)
         # df.to_csv("output.csv",index = False,encoding = "utf_8_sig)
         df.to_csv('data/outresult_sample.csv', mode='a',
