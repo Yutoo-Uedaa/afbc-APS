@@ -124,6 +124,7 @@ if st.session_state.count == -8:
     st.audio(audio_file_2.read())
     # AFC/B-PEM-AFC
     select2=st.radio('１ー２．リファレンス音源に近い音源を選択してください。',('1','2'))
+    sizi3 = st.empty()
     sizi3.write(' 音源1')
     audio_file_3=open('Test1_AFC_60_classics.wav','rb')
     st.audio(audio_file_3.read())
