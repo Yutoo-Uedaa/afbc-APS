@@ -141,7 +141,7 @@ if st.session_state.count == -8:
     sizi9.audio(audio_file_test_bytes, start_time=0)
     sizi10 = st.empty()
     sizi10.write('音源2')
-    size11 = st.empty()
+    sizi11 = st.empty()
     audio_file=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi11.audio(audio_file_test_bytes, start_time=0)
