@@ -19,6 +19,7 @@ kyouji = """本実験は、エントレインメント抑制機能の性能評�
                     \n　　・ドアベル
                     \n　　・電話のコール音
                     \n　　・英語の音声
+                    \n音源の到来方向が右側からになっています
                     \n音は何度聞き返してもかまいません。評価がおわりましたら「次の試験音へ」のボタンを押してください
                     \n 
                     \n  """#教示文
@@ -46,7 +47,7 @@ def format_func3(option):
     return CHOICES3[option]
 
 if 'count' not in st.session_state: #ページ番号をつかさどっている
-    st.session_state.count = -10
+    st.session_state.count = -21
 if 'group' not in st.session_state:
     st.session_state.group = -1
 if 'key' not in st.session_state:
@@ -56,7 +57,7 @@ if 'time' not in st.session_state:
 if 'time2' not in st.session_state:
     st.session_state.time2 = 0    
     
-if st.session_state.count == -10:  
+if st.session_state.count == -21:  
     st.title('APS評価実験') 
     explainBef = st.empty()
     with explainBef.expander("実験の説明", True):
@@ -80,16 +81,16 @@ if st.session_state.count == -10:
         explain.empty()
         sizi.empty()
         sizi2.empty()
-        st.session_state.count = -9
+        st.session_state.count = -20
     elif submitted:
         st.warning('名前を入力して下さい')
     
     
-if st.session_state.count == -9:
+if st.session_state.count == -20:
     sizi = st.empty()
     sizi.subheader('提示音サンプル')
     sizi2 = st.empty()
-    sizi2.write('評価対象音源のサンプルをお聞きください．')
+    sizi2.write('評価対象音源のサンプルを聞き音量を調整してください．')
     sizi3 = st.empty()
     sizi3.write('※まだ実験は始まっていません')
     
@@ -103,14 +104,14 @@ if st.session_state.count == -9:
         sizi2.empty()
         sizi3.empty()
         start.empty()
-        st.session_state.count = -8
+        st.session_state.count = -19
         
-# クラシック  
-if st.session_state.count == -8:
+# クラシック AFC/FS
+if st.session_state.count == -19:
     my_bar = st.progress(0)
-    my_bar.progress(int(100/6*1))
+    my_bar.progress(int(100/18*1))
     sizi = st.empty()
-    sizi.header('１．クラシック')
+    sizi.header('１ー１．クラシック')
     # リファレンス音源
     sizi2 = st.empty()
     sizi2.write('リファレンス音源は何回聞いても問題ありません')
@@ -118,9 +119,7 @@ if st.session_state.count == -8:
     audio_file=open('Test1_reference_60_classics.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi3.audio(audio_file_test_bytes, start_time=0)
-    # AFC/FS
     sizi4 = st.empty()
-    sizi4.header('1-1')
     sizi4.write('音源1')
     sizi5=st.empty()
     audio_file=open('Test1_AFC_60_classics.wav','rb')
@@ -134,44 +133,101 @@ if st.session_state.count == -8:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select1=sel1.radio('１-1．よりリファレンス音源に近い音源を選択してください。',('1','2'))
-    # AFC/B-PEM-AFC
-    sizi8 = st.empty()
-    sizi8.header('1-2')
-    sizi8.write('音源1')
-    sizi9 = st.empty()
+      
+    nex=st.empty()
+    next_button=nex.button('次の音源へ')
+    if next_button:
+        # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
+        sizi.empty()
+        sizi2.empty()
+        sizi3.empty()
+        sizi4.empty()
+        sizi5.empty()
+        sizi6.empty()
+        sizi7.empty()
+        sel1.empty()
+        nex.empty()
+        my_bar.empty()
+        st.session_state.count = -18
+    
+#  classic AFC/B-PEM-AFC    
+if st.session_state.count == -18: 
+    my_bar = st.progress(0)
+    my_bar.progress(int(100/18*2))
+    sizi = st.empty()
+    sizi.header('１ー２．クラシック')
+    # リファレンス音源
+    sizi2 = st.empty()
+    sizi2.write('リファレンス音源は何回聞いても問題ありません')
+    sizi3=st.empty()
+    audio_file=open('Test1_reference_60_classics.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi3.audio(audio_file_test_bytes, start_time=0)
+    sizi4 = st.empty()
+    sizi4.write('音源1')
+    sizi5 = st.empty()
     audio_file=open('Test1_AFC_60_classics.wav','rb')
     audio_file_test_bytes = audio_file.read()
-    sizi9.audio(audio_file_test_bytes, start_time=0)
-    sizi10 = st.empty()
-    sizi10.write('音源2')
-    sizi11 = st.empty()
+    sizi5.audio(audio_file_test_bytes, start_time=0)
+    sizi6 = st.empty()
+    sizi6.write('音源2')
+    sizi7 = st.empty()
     audio_file=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     audio_file_test_bytes = audio_file.read()
-    sizi11.audio(audio_file_test_bytes, start_time=0)
-    sel2 = st.empty()
-    select2=sel2.radio('1-2．リファレンス音源に近い音源を選択してください。',('1','2'))
-    # FS-AFC/B-PEM-AFC
-    sizi12 = st.empty()
-    sizi12.header('1-3')
-    sizi12.write('音源1')
-    sizi13 = st.empty()
-    audio_file=open('Test1_FS_AFC_60_classics.wav','rb')
-    audio_file_test_bytes = audio_file.read()
-    sizi13.audio(audio_file_test_bytes, start_time=0)
-    sizi14 = st.empty()
-    sizi14.write('音源2')
-    sizi15 = st.empty()
-    audio_file=open('Test1_B_PEM_AFC_60_classics.wav','rb')
-    audio_file_test_bytes = audio_file.read()
-    sizi15.audio(audio_file_test_bytes, start_time=0)
-    sel3 = st.empty()
-    select3=sel3.radio('1-3．リファレンス音源に近い音源を選択してください。',('1','2'))
-    df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [select1], '4': [select2], '5': [select3]})
-    #st.dataframe(df)
+    sizi7.audio(audio_file_test_bytes, start_time=0)
+    sel1 = st.empty()
+    select2=sel1.radio('リファレンス音源に近い音源を選択してください。',('1','2'))
     
     nex=st.empty()
-    next2_button=nex.button('次の音源(鐘の音)へ')
-    if next2_button:
+    next_button=nex.button('次の音源へ')
+    if next_button:
+        # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
+        sizi.empty()
+        sizi2.empty()
+        sizi3.empty()
+        sizi4.empty()
+        sizi5.empty()
+        sizi6.empty()
+        sizi7.empty()
+        sel1.empty()
+        nex.empty()
+        my_bar.empty()
+        st.session_state.count = -17
+        
+#  FS-AFC/B-PEM-AFC
+if st.session_state.count == -17: 
+    my_bar = st.progress(0)
+    my_bar.progress(int(100/18*3))
+    sizi = st.empty()
+    sizi.header('１ー３．クラシック')
+    # リファレンス音源
+    sizi2 = st.empty()
+    sizi2.write('リファレンス音源は何回聞いても問題ありません')
+    sizi3=st.empty()
+    audio_file=open('Test1_reference_60_classics.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi3.audio(audio_file_test_bytes, start_time=0)
+    sizi4 = st.empty()
+    sizi4.write('音源1')
+    sizi5 = st.empty()
+    audio_file=open('Test1_FS_AFC_60_classics.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi5.audio(audio_file_test_bytes, start_time=0)
+    sizi6 = st.empty()
+    sizi6.write('音源2')
+    sizi7 = st.empty()
+    audio_file=open('Test1_B_PEM_AFC_60_classics.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi7.audio(audio_file_test_bytes, start_time=0)
+    sel1 = st.empty()
+    select3=sel3.radio('1-3．リファレンス音源に近い音源を選択してください。',('1','2'))
+    
+    df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [select1], '4': [select2], '5': [select3]})
+    st.dataframe(df)
+    
+    nex=st.empty()
+    next_button=nex.button('次の音源(鐘の音)へ')
+    if next_button:
         df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
@@ -180,17 +236,7 @@ if st.session_state.count == -8:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        sizi8.empty()
-        sizi9.empty()
-        sizi10.empty()
-        sizi11.empty()
-        sizi12.empty()
-        sizi13.empty()
-        sizi14.empty()
-        sizi15.empty()
         sel1.empty()
-        sel2.empty()
-        sel3.empty()
         nex.empty()
         my_bar.empty()
         st.session_state.count = -7
