@@ -134,6 +134,7 @@ if st.session_state.count == -19:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select1=sel1.radio('1-1.リファレンス音源に近い音源を選択してください。',('1','2'))
+    df.iat[2,1]=sel1
     st.table(df)
       
     nex=st.empty()
