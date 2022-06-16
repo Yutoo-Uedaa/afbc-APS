@@ -925,7 +925,7 @@ if st.session_state.count == -1:
     st.dataframe(df)
     df.to_csv('data/outresult_sample4.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
     st.write('全体の結果')
-    wine = pd.read_csv("data/outresult_sample4.csv")
+    wine = pd.read_csv('data/outresult_sample1.csv7)
     st.dataframe(wine)
         
     st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')    
