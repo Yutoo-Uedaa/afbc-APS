@@ -112,7 +112,7 @@ if st.session_state.count == -21:
         sizi2.empty()
         st.session_state.count =0
     
-if st.session_state.count == 0    
+if st.session_state.count == 0:    
     st.write('全体の結果')
     wine = pd.read_csv('data/outresult_sample6.csv', names=('名前','音声','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'))
     st.dataframe(wine)
