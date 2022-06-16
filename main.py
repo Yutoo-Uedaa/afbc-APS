@@ -86,7 +86,9 @@ if st.session_state.count == -21:
     explain = st.empty()
     sizi2 = st.empty()
     sizi2.write('本実験はヘッドホンでの参加をお願い致します。''こちらの音が聞きやすい大きさでPCの音量を調節し実験中はいじらないでください')
-
+    resu=st.empty()
+    resu1_button=resu.button('結果一覧')
+    
     with explain.form("my_form"):
         sub_name = st.text_input("名前を入力してください   　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　""　　　　　 　　　　  　　　　　 ""例：リオン太郎さんの場合 >>>　t_rion")
         sub_age = st.selectbox('年代を選択してください', ('20代', '30代', '40代', '50代', '60代', '非公表',))
@@ -98,12 +100,11 @@ if st.session_state.count == -21:
         explain.empty()
         sizi.empty()
         sizi2.empty()
+        resu.empty()
         st.session_state.count = -20
     elif submitted:
         st.warning('名前を入力して下さい')
         
-    resu=st.empty()
-    resu1_button=resu.button('結果一覧')
     
     if resu1_button:
         explainBef.empty()
@@ -120,11 +121,15 @@ if st.session_state.count == 0:
 if st.session_state.count == -20:
     sizi = st.empty()
     sizi.subheader('提示音サンプル')
+    
     sizi2 = st.empty()
     sizi2.write('評価対象音源のサンプルを聞き音量を調整してください．')
     sizi3 = st.empty()
     sizi3.write('※まだ実験は始まっていません')
-    
+    sizi4=st.empty()
+    audio_file=open('Test1_reference_60_classics.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi4.audio(audio_file_test_bytes, start_time=0)
     start = st.empty()
     with start.form("my_form2"):
         start_button= st.form_submit_button("実験を始める")
@@ -132,6 +137,7 @@ if st.session_state.count == -20:
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
+        sizi4.empty()
         start.empty()
         st.session_state.count = -19
         
