@@ -192,7 +192,7 @@ if st.session_state.count == -18:
         sizi6.empty()
         sizi7.empty()
         sel1.empty()
-        nex2.empty()
+        nex.empty()
         my_bar.empty()
         st.session_state.count = -17
         
@@ -228,8 +228,8 @@ if st.session_state.count == -17:
     #st.dataframe(df)
     
     nex=st.empty()
-    next3_button=nex.button('次の音源へ(4/18)')
-    if next_button:
+    next1_button=nex.button('次の音源へ(4/18)')
+    if nex1_button:
         #df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
@@ -239,7 +239,7 @@ if st.session_state.count == -17:
         sizi6.empty()
         sizi7.empty()
         sel1.empty()
-        nex3.empty()
+        nex.empty()
         my_bar.empty()
         st.session_state.count = -7
     
