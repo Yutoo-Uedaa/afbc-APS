@@ -229,7 +229,7 @@ if st.session_state.count == -17:
     
     nex=st.empty()
     next1_button=nex.button('次の音源へ(4/18)')
-    if nex1_button:
+    if next1_button:
         #df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
