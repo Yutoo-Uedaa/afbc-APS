@@ -115,8 +115,6 @@ if st.session_state.count == -20:
     with start.form("my_form2"):
         start_button= st.form_submit_button("実験を始める")
     if start_button:
-        # df = pd.DataFrame({'1': ['名前',st.session_state.key], '2': ['音源','クラシック'], '3': ['テスト１（AFC/FS）','0'], '4': ['テスト２（AFC/B）','0'], '5': ['テスト３（FS/B）','0']})
-        # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -155,7 +153,6 @@ if st.session_state.count == -19:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(2/18)')
     if next1_button:
-        # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -200,7 +197,6 @@ if st.session_state.count == -18:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(3/18)')
     if next1_button:
-        # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -247,7 +243,6 @@ if st.session_state.count == -17:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(4/18)')
     if next1_button:
-        #df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -293,7 +288,6 @@ if st.session_state.count == -16:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(5/18)')
     if next1_button:
-        # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -338,7 +332,6 @@ if st.session_state.count == -15:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(6/18)')
     if next1_button:
-        # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -379,13 +372,13 @@ if st.session_state.count == -14:
     sel1 = st.empty()
     select3=sel1.radio('2-3.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select2_3=select3  
-    df = pd.DataFrame({'1': [st.session_state.key,st.session_state.key]], '2': ['クラシック','鐘の音'], '3': [st.select1_1,st.select2_1], '4': [st.select1_2,st.select2_2], '5': [st.select1_3,st.select2_3]})
+    df = pd.DataFrame({'1': [st.session_state.key,st.session_state.key], '2': ['クラシック','鐘の音'], '3': [st.select1_1,st.select2_1], '4': [st.select1_2,st.select2_2], '5': [st.select1_3,st.select2_3]})
     st.dataframe(df)
     
     nex=st.empty()
     next1_button=nex.button('次の音源へ(7/18)')
     if next1_button:
-        #df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
+        
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -429,7 +422,6 @@ if st.session_state.count == -13:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(8/18)')
     if next1_button:
-        # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
