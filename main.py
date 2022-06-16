@@ -152,7 +152,7 @@ if st.session_state.count == -19:
       
     nex=st.empty()
     next1_button=nex.button('次の音源へ(2/18)')
-    if next1_buttonand (st.session_state.time - st.session_state.time2) > 2:
+    if next1_button and (st.session_state.time - st.session_state.time2) > 2:
         st.session_state.time2 = time.time()
         sizi.empty()
         sizi2.empty()
