@@ -99,8 +99,7 @@ if st.session_state.count == -20:
     with start.form("my_form2"):
         start_button= st.form_submit_button("実験を始める")
     if start_button:
-        df = pd.DataFrame({'1': ['名前'], '2': ['音源'], '3': ['テスト１（AFC/FS）'], '4': ['テスト２（AFC/B）'], '5': ['テスト３（FS/B）']
-                          '1': ['名前'], '2': ['クラシック'], '3': ['テスト１（AFC/FS）'], '4': ['テスト２（AFC/B）'], '5': ['テスト３（FS/B）']})
+        df = pd.DataFrame({'1': ['名前',st.session_state.key], '2': ['音源','クラシック'], '3': ['テスト１（AFC/FS）','0'], '4': ['テスト２（AFC/B）','0'], '5': ['テスト３（FS/B）','0']})
         # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
