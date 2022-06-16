@@ -57,8 +57,9 @@ if 'time' not in st.session_state:
 if 'time2' not in st.session_state:
     st.session_state.time2 = 0    
     
-df = pd.DataFrame({'1': ['名前','yuto'], '2': ['音源','クラシック'], '3': ['テスト１（AFC/FS）','0'], '4': ['テスト２（AFC/B）','0'], '5': ['テスト３（FS/B）','0']})
-if st.session_state.count == -21:  
+
+if st.session_state.count == -21:
+    df = pd.DataFrame({'1': ['名前','yuto'], '2': ['音源','クラシック'], '3': ['テスト１（AFC/FS）','0'], '4': ['テスト２（AFC/B）','0'], '5': ['テスト３（FS/B）','0']})
     st.title('APS評価実験') 
     explainBef = st.empty()
     with explainBef.expander("実験の説明", True):
@@ -134,7 +135,6 @@ if st.session_state.count == -19:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select1=sel1.radio('1-1.リファレンス音源に近い音源を選択してください。',('1','2'))
-    df.iat[2,1]=sel1
     st.table(df)
       
     nex=st.empty()
