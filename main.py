@@ -8,8 +8,6 @@ import pickle
 import csv
 
 
-
-
 kyouji = """本実験は、エントレインメント抑制機能の性能評価として、通常のNLMS、周波数シフトを用いたNLMS、提案手法の音声を聴き比べ評価するものです。
                     \n提示された基準音と評価音の二つを聴き比べ、基準音にどちらが近い音かを評価してください。
                     \n６つの音源によって調査を行う。
@@ -504,7 +502,7 @@ if st.session_state.count == -11:
     #st.dataframe(df)
     
     nex=st.empty()
-    next1_button=nex.button('次の音源へ(7/18)')
+    next1_button=nex.button('次の音源へ(10/18)')
     if next1_button:
         #df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
@@ -517,7 +515,7 @@ if st.session_state.count == -11:
         sel1.empty()
         nex.empty()
         my_bar.empty()
-        st.session_state.count = -13
+        st.session_state.count = -5
  
 if st.session_state.count == -5:
     my_bar = st.progress(0)
