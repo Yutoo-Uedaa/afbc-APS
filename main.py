@@ -349,7 +349,7 @@ if st.session_state.count == -14:
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*6))
     sizi = st.empty()
-    sizi.header('２ー３．クラシック')
+    sizi.header('２ー３．鐘の音')
     # リファレンス音源
     sizi2 = st.empty()
     sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
@@ -923,7 +923,7 @@ if st.session_state.count == -1:
                        'FS-AFC/Prop': [st.select1_3,st.select2_3,st.select3_3,st.select4_3,st.select5_3,st.select6_3]
                       })
     st.dataframe(df)
-    df.to_csv('utresult_sample4.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
+    df.to_csv('data/outresult_sample4.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
     st.write('全体の結果')
     wine = pd.read_csv("data/outresult_sample4.csv")
     st.dataframe(wine)
