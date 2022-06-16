@@ -180,9 +180,9 @@ if st.session_state.count == -18:
     select2=sel1.radio('1-2.リファレンス音源に近い音源を選択してください。',('1','2'))
 
     
-    nex2=st.empty()
-    next2_button=nex2.button('次の音源へ')
-    if next2_button:
+    nex=st.empty()
+    next1_button=nex.button('次の音源へ')
+    if next1_button:
         # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
