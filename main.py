@@ -52,6 +52,7 @@ if 'group' not in st.session_state:
     st.session_state.group = -1
 if 'key' not in st.session_state:
     st.session_state.key = 'value'
+
 if 'time' not in st.session_state:
     st.session_state.time = 0
 if 'time2' not in st.session_state:
@@ -99,7 +100,7 @@ if st.session_state.count == -20:
         start_button= st.form_submit_button("実験を始める")
     if start_button:
         df = pd.DataFrame({'1': ['名前'], '2': ['音源'], '3': ['テスト１（AFC/FS）'], '4': ['テスト２（AFC/B）'], '5': ['テスト３（FS/B）']})
-        df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
+        # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -222,7 +223,7 @@ if st.session_state.count == -17:
     sel1 = st.empty()
     select3=sel1.radio('リファレンス音源に近い音源を選択してください。',('1','2'))
     
-    df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [select1], '4': [select2], '5': [select3]})
+    # df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [select1], '4': [select2], '5': [select3]})
     st.dataframe(df)
     
     nex=st.empty()
