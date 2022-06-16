@@ -226,7 +226,7 @@ if st.session_state.count == -17:
     select3=sel1.radio('リファレンス音源に近い音源を選択してください。',('1','2'))
     
     # df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [select1], '4': [select2], '5': [select3]})
-    st.dataframe(df)
+    #st.dataframe(df)
     
     nex=st.empty()
     next3_button=nex.button('次の音源(鐘の音)へ')
