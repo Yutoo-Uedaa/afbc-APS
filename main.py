@@ -416,8 +416,8 @@ if st.session_state.count == -13:
     audio_file=open('Test3_FS_AFC_60_ambulance_siren.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
-    sel1 = st.empty()
-    select1=sel1.radio('3-1.リファレンス音源に近い音源を選択してください。',('1','2'))
+    sel2 = st.empty()
+    select1=sel2.radio('3-1.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select3_1=select1    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(8/18)')
@@ -429,7 +429,7 @@ if st.session_state.count == -13:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        sel1.empty()
+        sel2.empty()
         nex.empty()
         my_bar.empty()
         st.session_state.count = -12
@@ -547,8 +547,8 @@ if st.session_state.count == -10:
     audio_file=open('Test4_FS_AFC_60_doorbell.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
-    sel1 = st.empty()
-    select1=sel1.radio('4-1.リファレンス音源に近い音源を選択してください。',('1','2'))
+    sel2 = st.empty()
+    select1=sel2.radio('4-1.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select4_1=select1    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(11/18)')
@@ -560,7 +560,7 @@ if st.session_state.count == -10:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        sel1.empty()
+        sel2.empty()
         nex.empty()
         my_bar.empty()
         st.session_state.count = -9
@@ -866,10 +866,10 @@ if st.session_state.count == -3:
         sel1.empty()
         nex.empty()
         my_bar.empty()
-        st.session_state.count = -5
+        st.session_state.count = -2
         
 #   英語の音声　FS-AFC/B-PEM-AFC
-if st.session_state.count == -5: 
+if st.session_state.count == -2: 
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*18))
     sizi = st.empty()
@@ -925,7 +925,7 @@ if st.session_state.count == -1:
     st.dataframe(df)
     df.to_csv('data/outresult_sample5.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
     st.write('全体の結果')
-    wine = pd.read_csv('data/outresult_sample5.csv')
+    wine = pd.read_csv('data/outresult_sample5.csv',names('名前','音声','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'))
     st.dataframe(wine)
         
     st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')    
