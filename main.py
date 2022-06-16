@@ -59,7 +59,6 @@ if 'time2' not in st.session_state:
     
 
 if st.session_state.count == -21:
-    df = pd.DataFrame({'1': ['名前','yuto'], '2': ['音源','クラシック'], '3': ['テスト１（AFC/FS）','0'], '4': ['テスト２（AFC/B）','0'], '5': ['テスト３（FS/B）','0']})
     st.title('APS評価実験') 
     explainBef = st.empty()
     with explainBef.expander("実験の説明", True):
@@ -232,7 +231,7 @@ if st.session_state.count == -17:
     nex=st.empty()
     next3_button=nex.button('次の音源(鐘の音)へ')
     if next_button:
-        df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
+        #df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
