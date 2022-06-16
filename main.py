@@ -117,7 +117,7 @@ if st.session_state.count == 0:
     st.write('全体の結果')
     wine = pd.read_csv('data/outresult_sample6.csv', names=('name','音声','  AFC/FS-AFC','  AFC/Prop','  FS-AFC/Prop'))
     st.dataframe(wine)
-    csv_financde = wine_stocktable.to_csv().encode('utf-8')
+    csv_financde = wine.to_csv().encode('utf-8')
     st.download_button(
     label='CSVダウンロード',
     data=csv_financde,
