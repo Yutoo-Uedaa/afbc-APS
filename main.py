@@ -50,9 +50,24 @@ if 'group' not in st.session_state:
     st.session_state.group = -1
 if 'key' not in st.session_state:
     st.session_state.key = 'value'
-    st.select1='value'
-    st.select2='value'
-    st.select3='value'
+    st.select1_1='value'
+    st.select1_2='value'
+    st.select1_3='value'
+    st.select2_1='value'
+    st.select2_2='value'
+    st.select2_3='value'
+    st.select3_1='value'
+    st.select3_2='value'
+    st.select3_3='value'
+    st.select4_1='value'
+    st.select4_2='value'
+    st.select4_3='value'
+    st.select5_1='value'
+    st.select5_2='value'
+    st.select5_3='value'
+    st.select6_1='value'
+    st.select6_2='value'
+    st.select6_3='value'
 if 'time' not in st.session_state:
     st.session_state.time = 0
 if 'time2' not in st.session_state:
@@ -135,7 +150,7 @@ if st.session_state.count == -19:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select1=sel1.radio('1-1.リファレンス音源に近い音源を選択してください。',('1','2'))
-    st.select1=select1 
+    st.select1_1=select1 
       
     nex=st.empty()
     next1_button=nex.button('次の音源へ(2/18)')
@@ -180,7 +195,7 @@ if st.session_state.count == -18:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select2=sel1.radio('1-2.リファレンス音源に近い音源を選択してください。',('1','2'))
-    st.select2=select2 
+    st.select1_2=select2 
     
     nex=st.empty()
     next1_button=nex.button('次の音源へ(3/18)')
@@ -225,10 +240,9 @@ if st.session_state.count == -17:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select3=sel1.radio('リファレンス音源に近い音源を選択してください。',('1','2'))
-    st.select3=select3 
-    
-    df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [st.select1], '4': [st.select2], '5': [st.select3]})
-    st.dataframe(df)
+    st.select1_3=select3 
+    #df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [st.select1], '4': [st.select2], '5': [st.select3]})
+    #st.dataframe(df)
     
     nex=st.empty()
     next1_button=nex.button('次の音源へ(4/18)')
@@ -274,7 +288,8 @@ if st.session_state.count == -16:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select1=sel1.radio('2-1.リファレンス音源に近い音源を選択してください。',('1','2'))
-      
+    st.select2_1=select3       
+    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(5/18)')
     if next1_button:
@@ -318,7 +333,7 @@ if st.session_state.count == -15:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select2=sel1.radio('2-2.リファレンス音源に近い音源を選択してください。',('1','2'))
-
+    st.select2_2=select3  
     
     nex=st.empty()
     next1_button=nex.button('次の音源へ(6/18)')
@@ -363,8 +378,8 @@ if st.session_state.count == -14:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select3=sel1.radio('2-3.リファレンス音源に近い音源を選択してください。',('1','2'))
-    
-    # df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [select1], '4': [select2], '5': [select3]})
+    st.select2_3=select3  
+    # df = pd.DataFrame({'1': [st.session_state.key,st.session_state.key]], '2': ['クラシック','鐘の音'], '3': [st.select1_1,st.select2_1], '4': [st.select1_2,st.select2_2], '5': [st.select1_3,st.select2_3]})
     #st.dataframe(df)
     
     nex=st.empty()
