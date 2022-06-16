@@ -239,9 +239,9 @@ if st.session_state.count == -17:
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select3=sel1.radio('リファレンス音源に近い音源を選択してください。',('1','2'))
+    select3=sel1.radio('1-3.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select1_3=select3 
-    df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [st.select1], '4': [st.select2], '5': [st.select3]})
+    df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [st.select1_1], '4': [st.select1_2], '5': [st.select1_3]})
     st.dataframe(df)
     
     nex=st.empty()
@@ -379,8 +379,8 @@ if st.session_state.count == -14:
     sel1 = st.empty()
     select3=sel1.radio('2-3.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select2_3=select3  
-    # df = pd.DataFrame({'1': [st.session_state.key,st.session_state.key]], '2': ['クラシック','鐘の音'], '3': [st.select1_1,st.select2_1], '4': [st.select1_2,st.select2_2], '5': [st.select1_3,st.select2_3]})
-    #st.dataframe(df)
+    df = pd.DataFrame({'1': [st.session_state.key,st.session_state.key]], '2': ['クラシック','鐘の音'], '3': [st.select1_1,st.select2_1], '4': [st.select1_2,st.select2_2], '5': [st.select1_3,st.select2_3]})
+    st.dataframe(df)
     
     nex=st.empty()
     next1_button=nex.button('次の音源へ(7/18)')
