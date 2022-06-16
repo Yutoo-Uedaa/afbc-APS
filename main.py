@@ -117,6 +117,9 @@ if st.session_state.count == 0:
     st.write('全体の結果')
     wine = pd.read_csv('data/outresult_sample6.csv', names=('name','音声','  AFC/FS-AFC','  AFC/Prop','  FS-AFC/Prop'))
     st.dataframe(wine,10000,1000)
+    b64 = base64.b64encode(wine.encode('utf-8-sig')).decode()
+    href = f'<a href="data:application/octet-stream;base64,{b64}" download="data/outresult_sample6.csv">Download Link</a>'
+    st.markdown(f"CSVファイルのダウンロード(utf-8 BOM):  {href}", unsafe_allow_html=True)
     
 if st.session_state.count == -20:
     sizi = st.empty()
