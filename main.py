@@ -136,7 +136,7 @@ if st.session_state.count == -19:
     select1=sel1.radio('1-1.リファレンス音源に近い音源を選択してください。',('1','2'))
       
     nex=st.empty()
-    next1_button=nex.button('次の音源へ')
+    next1_button=nex.button('次の音源へ(2/18)')
     if next1_button:
         # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
@@ -181,7 +181,7 @@ if st.session_state.count == -18:
 
     
     nex=st.empty()
-    next1_button=nex.button('次の音源へ')
+    next1_button=nex.button('次の音源へ(3/18)')
     if next1_button:
         # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
@@ -228,7 +228,7 @@ if st.session_state.count == -17:
     #st.dataframe(df)
     
     nex=st.empty()
-    next3_button=nex.button('次の音源(鐘の音)へ')
+    next3_button=nex.button('次の音源へ(4/18)')
     if next_button:
         #df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
