@@ -158,7 +158,7 @@ if st.session_state.count == -18:
     sizi.header('１ー２．クラシック')
     # リファレンス音源
     sizi2 = st.empty()
-      sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
     sizi3=st.empty()
     audio_file=open('Test1_reference_60_classics.wav','rb')
     audio_file_test_bytes = audio_file.read()
