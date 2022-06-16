@@ -900,6 +900,12 @@ if st.session_state.count == -5:
     nex=st.empty()
     next1_button=nex.button('終了')
     if next1_button:
+        df = pd.DataFrame({'名前': [st.session_state.key,st.session_state.key,st.session_state.key,st.session_state.key,st.session_state.key,st.session_state.key], 
+                       '音声': ['クラシック','鐘の音','救急車のサイレン','ドアベル','電話のコール音','英語の音声'], 
+                       'AFC/FS-AFC': [st.select1_1,st.select2_1,st.select3_1,st.select4_1,st.select5_1,st.select6_1],
+                       'AFC/Prop': [st.select1_2,st.select2_2,st.select3_2,st.select4_2,st.select5_2,st.select6_2], 
+                       'FS-AFC/Prop': [st.select1_3,st.select2_3,st.select3_3,st.select4_3,st.select5_3,st.select6_3]
+                      })
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -916,14 +922,9 @@ if st.session_state.count == -1:
     my_bar = st.progress(0)
     my_bar.progress(int(100/6*6))
     st.write('自分の結果')
-    df = pd.DataFrame({'名前': [st.session_state.key,st.session_state.key,st.session_state.key,st.session_state.key,st.session_state.key,st.session_state.key], 
-                       '音声': ['クラシック','鐘の音','救急車のサイレン','ドアベル','電話のコール音','英語の音声'], 
-                       'AFC/FS-AFC': [st.select1_1,st.select2_1,st.select3_1,st.select4_1,st.select5_1,st.select6_1],
-                       'AFC/Prop': [st.select1_2,st.select2_2,st.select3_2,st.select4_2,st.select5_2,st.select6_2], 
-                       'FS-AFC/Prop': [st.select1_3,st.select2_3,st.select3_3,st.select4_3,st.select5_3,st.select6_3]
-                      })
+    
     st.dataframe(df)
-    df.to_csv('data/outresult_sample4.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
+    df.to_csv('data/outresult_sample4.csv', mode='a',header=False, encoding='utf_8_sig')
     st.write('全体の結果')
     wine = pd.read_csv("data/outresult_sample4.csv")
     st.dataframe(wine)
