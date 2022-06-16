@@ -8,18 +8,18 @@ import pickle
 import csv
 
 
-kyouji = """本実験は、エントレインメント抑制機能の性能評価として、通常のNLMS、周波数シフトを用いたNLMS、提案手法の音声を聴き比べ評価するものです。
-                    \n提示された基準音と評価音の二つを聴き比べ、基準音にどちらが近い音かを評価してください。
-                    \n６つの音源によって調査を行う。
+kyouji = """本実験は、エントレインメント抑制機能の性能評価として、通常のNLMS、周波数シフトを用いたNLMS、提案手法の出力音声を聴き比べ評価するものです。
+                    \n提示されたリファレンス音源と評価音源の二つを聴き比べ、リファレンス音源にどちらが近い音かを評価してください。
+                    \n６つの音源によって調査を行います。
                     \n　　・クラシック
                     \n　　・鐘の音
                     \n　　・救急車のサイレン音
                     \n　　・ドアベル
                     \n　　・電話のコール音
                     \n　　・英語の音声
-                    \n音源の到来方向が右側からになっています
+                    \n音源の到来方向が右側からになっています。右側イヤホンからの音が大きく聞こえます。
                     \n音は何度聞き返してもかまいません。評価がおわりましたら「次の試験音へ」のボタンを押してください
-                    \n 
+                    \n回答が終わりましたら終了ボタンを押して終了してください。
                     \n  """#教示文
 
 def inc_count():
@@ -101,7 +101,21 @@ if st.session_state.count == -21:
         st.session_state.count = -20
     elif submitted:
         st.warning('名前を入力して下さい')
+        
+    resu=st.empty()
+    resu1_button=resu.button('結果一覧')
     
+    if resu1_button:
+        explainBef.empty()
+        explain.empty()
+        sizi.empty()
+        sizi2.empty()
+        st.session_state.count =0
+    
+if st.session_state.count == 0    
+    st.write('全体の結果')
+    wine = pd.read_csv('data/outresult_sample6.csv', names=('名前','音声','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'))
+    st.dataframe(wine)
     
 if st.session_state.count == -20:
     sizi = st.empty()
