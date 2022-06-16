@@ -99,7 +99,8 @@ if st.session_state.count == -20:
     with start.form("my_form2"):
         start_button= st.form_submit_button("実験を始める")
     if start_button:
-        df = pd.DataFrame({'1': ['名前'], '2': ['音源'], '3': ['テスト１（AFC/FS）'], '4': ['テスト２（AFC/B）'], '5': ['テスト３（FS/B）']})
+        df = pd.DataFrame({'1': ['名前'], '2': ['音源'], '3': ['テスト１（AFC/FS）'], '4': ['テスト２（AFC/B）'], '5': ['テスト３（FS/B）']}
+                          {'1': ['名前'], '2': ['クラシック'], '3': ['テスト１（AFC/FS）'], '4': ['テスト２（AFC/B）'], '5': ['テスト３（FS/B）']})
         # df.to_csv('data/outresult_sample3.csv', mode='a',header=False, index=False, encoding='utf_8_sig')
         sizi.empty()
         sizi2.empty()
@@ -134,7 +135,7 @@ if st.session_state.count == -19:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select1=sel1.radio('リファレンス音源に近い音源を選択してください。',('1','2'))
-    st.dataframe(df)  
+    
       
     nex=st.empty()
     next1_button=nex.button('次の音源へ')
@@ -179,6 +180,7 @@ if st.session_state.count == -18:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select2=sel1.radio('リファレンス音源に近い音源を選択してください。',('1','2'))
+    st.dataframe(df)  
     
     nex=st.empty()
     next2_button=nex.button('次の音源へ')
