@@ -219,7 +219,7 @@ if st.session_state.count == -18:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select1=sel1.radio('1-2.リファレンス音源に近い音源を選択してください。',('1','2'))
-    if select1==1:
+    if select1=='1':
         st.select1_1=str('2')
     else:
         st.select1_1=str('1')  
@@ -266,7 +266,7 @@ if st.session_state.count == -17:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select2=sel1.radio('1-3.リファレンス音源に近い音源を選択してください。',('1','2'))
-    if select2==1:
+    if select2=='1':
         st.select1_2=str('2')  
     else:
         st.select1_2=str('1')  
@@ -317,7 +317,7 @@ if st.session_state.count == -16:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select1=sel1.radio('2-1.リファレンス音源に近い音源を選択してください。',('1','2'))
-    if select1==1:
+    if select1=='1':
         st.select2_1=str('2')  
     else:
         st.select2_1=str('1')  
@@ -543,7 +543,7 @@ if st.session_state.count == -11:
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select2=sel1.radio('3-3.リファレンス音源に近い音源を選択してください。',('1','2'))
-    if select2==1:
+    if select2=='1':
         st.select3_2=str('2')  
     else:
         st.select3_2=str('1')  
