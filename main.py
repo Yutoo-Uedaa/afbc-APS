@@ -174,7 +174,7 @@ if st.session_state.count == -19:
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select3=sel1.radio('1-3.リファレンス音源に近い音源を選択してください。',('1','2'))
+    select3=sel1.radio('1-1.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select1_3=select3 
       
     nex=st.empty()
@@ -218,7 +218,7 @@ if st.session_state.count == -18:
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select1=sel1.radio('1-1.リファレンス音源に近い音源を選択してください。',('1','2'))
+    select1=sel1.radio('1-2.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select1_1=select1 
     
     nex=st.empty()
@@ -262,7 +262,7 @@ if st.session_state.count == -17:
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select2=sel1.radio('1-2.リファレンス音源に近い音源を選択してください。',('1','2'))
+    select2=sel1.radio('1-3.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select1_2=select2 
     #df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [st.select1_1], '4': [st.select1_2], '5': [st.select1_3]})
     #st.dataframe(df)
@@ -353,7 +353,7 @@ if st.session_state.count == -15:
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select3=sel1.radio('2-3.リファレンス音源に近い音源を選択してください。',('1','2'))
+    select3=sel1.radio('2-2.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select2_3=select3  
     
     nex=st.empty()
@@ -397,7 +397,7 @@ if st.session_state.count == -14:
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select2=sel1.radio('2-2.リファレンス音源に近い音源を選択してください。',('1','2'))
+    select2=sel1.radio('2-3.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select2_2=select2  
     #df = pd.DataFrame({'1': [st.session_state.key,st.session_state.key], '2': ['クラシック','鐘の音'], '3': [st.select1_1,st.select2_1], '4': [st.select1_2,st.select2_2], '5': [st.select1_3,st.select2_3]})
     #st.dataframe(df)
@@ -488,7 +488,7 @@ if st.session_state.count == -12:
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select3=sel1.radio('3-3.リファレンス音源に近い音源を選択してください。',('1','2'))
+    select3=sel1.radio('3-2.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select3_3=select3   
     
     nex=st.empty()
@@ -532,7 +532,7 @@ if st.session_state.count == -11:
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select2=sel1.radio('3-2.リファレンス音源に近い音源を選択してください。',('1','2'))
+    select2=sel1.radio('3-3.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select3_2=select2
     
     nex=st.empty()
@@ -708,7 +708,7 @@ if st.session_state.count == -7:
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select2=sel1.radio('5-2.リファレンス音源に近い音源を選択してください。',('1','2'))
+    select2=sel1.radio('5-1.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select5_2=select2
         
     nex=st.empty()
@@ -752,7 +752,7 @@ if st.session_state.count == -6:
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select1=sel1.radio('5-1.リファレンス音源に近い音源を選択してください。',('1','2'))
+    select1=sel1.radio('5-2.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select5_1=select1
     
     nex=st.empty()
@@ -841,7 +841,7 @@ if st.session_state.count == -4:
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select3=sel1.radio('6-3.リファレンス音源に近い音源を選択してください。',('1','2'))
+    select3=sel1.radio('6-1.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select6_3=select3  
        
     nex=st.empty()
@@ -928,7 +928,7 @@ if st.session_state.count == -2:
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select1=sel1.radio('6-1.リファレンス音源に近い音源を選択してください。',('1','2'))
+    select1=sel1.radio('6-3.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select6_1=select1  
     
     nex=st.empty()
