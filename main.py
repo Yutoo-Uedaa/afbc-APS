@@ -121,7 +121,7 @@ if st.session_state.count == 0:
 
     data1=data1.query('source == "クラシック"')
     s_bool_and = ((data1['source'] == 'クラシック') & (data1['AFC(1)/FS-AFC(2)'] == 2))
-    st.write('クラシック(AFC/FS-AFC)でFS-AFCを選んだ人数:'+str(s_bool_and.sum()))
+    st.write('クラシック(AFC/FS-AFC)でFS-AFCを選んだ人数 : '+str(s_bool_and.sum()))
     st.dataframe(data1)
     
     
