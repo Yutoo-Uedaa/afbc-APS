@@ -115,7 +115,7 @@ if st.session_state.count == -21:
     
 if st.session_state.count == 0:    
     st.write('全体の結果')
-    wine = pd.read_csv('data/outresult_sample6.csv', names=('name','音声','  AFC/FS-AFC','  AFC/Prop','  FS-AFC/Prop'))
+    wine = pd.read_csv('data/outresult_sample6.csv', names=('name','音声','  AFC(1)/FS-AFC(2)','  AFC(1)/Prop(2)','  FS-AFC(1)/Prop(2)'))
     st.dataframe(wine)
     csv_financde = wine.to_csv().encode('utf-8-sig').decode()
     st.download_button(
@@ -965,14 +965,14 @@ if st.session_state.count == -1:
     st.write('自分の結果')
     df = pd.DataFrame({'名前': [st.session_state.key,st.session_state.key,st.session_state.key,st.session_state.key,st.session_state.key,st.session_state.key], 
                        '音声': ['クラシック','鐘の音','救急車のサイレン','ドアベル','電話のコール音','英語の音声'], 
-                       'AFC/FS-AFC': [st.select1_1,st.select2_1,st.select3_1,st.select4_1,st.select5_1,st.select6_1],
-                       'AFC/Prop': [st.select1_2,st.select2_2,st.select3_2,st.select4_2,st.select5_2,st.select6_2], 
-                       'FS-AFC/Prop': [st.select1_3,st.select2_3,st.select3_3,st.select4_3,st.select5_3,st.select6_3]
+                       'AFC(1)/FS-AFC(2)': [st.select1_1,st.select2_1,st.select3_1,st.select4_1,st.select5_1,st.select6_1],
+                       'AFC(1)/Prop(2)': [st.select1_2,st.select2_2,st.select3_2,st.select4_2,st.select5_2,st.select6_2], 
+                       'FS-AFC(1)/Prop(2)': [st.select1_3,st.select2_3,st.select3_3,st.select4_3,st.select5_3,st.select6_3]
                       })    
     st.dataframe(df)
     df.to_csv('data/outresult_sample6.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
     st.write('全体の結果')
-    wine = pd.read_csv('data/outresult_sample6.csv', names=('名前','音声','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'))
+    wine = pd.read_csv('data/outresult_sample6.csv', names=('名前','音声','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
     st.dataframe(wine)
         
     st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')    
