@@ -118,7 +118,8 @@ if st.session_state.count == 0:
     wine = pd.read_csv('data/outresult_sample6.csv', names=('name','source','  AFC(1)/FS-AFC(2)','  AFC(1)/Prop(2)','  FS-AFC(1)/Prop(2)'))
     st.dataframe(wine)
     data1=wine
-   data1=data1.query('source == "クラシック"')
+    st.dataframe(data1)
+    data1=data1.query('source == "クラシック"')
     
     
     csv_financde = wine.to_csv().encode('utf-8-sig').decode()
