@@ -192,7 +192,7 @@ if st.session_state.count == -19:
         my_bar.empty()
         st.session_state.count = -18
     
-#  classic AFC/FS-AFC    
+#  classic FS-AFC/AFC    
 if st.session_state.count == -18: 
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*2))
@@ -208,19 +208,22 @@ if st.session_state.count == -18:
     sizi4 = st.empty()
     sizi4.write('・音源1')
     sizi5=st.empty()
-    audio_file=open('Test1_AFC_60_classics.wav','rb')
+    audio_file=open('Test1_FS_AFC_60_classics.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi5.audio(audio_file_test_bytes, start_time=0)
     sizi6 = st.empty()
     sizi6.write('・音源2')
     sizi7=st.empty()
-    audio_file=open('Test1_FS_AFC_60_classics.wav','rb')
+    audio_file=open('Test1_AFC_60_classics.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select1=sel1.radio('1-2.リファレンス音源に近い音源を選択してください。',('1','2'))
-    st.select1_1=select1 
-    
+    if select1==1:
+        st.select1_1=2
+    else
+        st.select1_1=1  
+      
     nex=st.empty()
     next1_button=nex.button('次の音源へ(3/18)')
     if next1_button:
@@ -236,7 +239,7 @@ if st.session_state.count == -18:
         my_bar.empty()
         st.session_state.count = -17
         
-#  classics AFC/B-PEM-AFC
+#  classics B-PEM-AFC/AFC
 if st.session_state.count == -17: 
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*3))
@@ -252,18 +255,21 @@ if st.session_state.count == -17:
     sizi4 = st.empty()
     sizi4.write('・音源1')
     sizi5 = st.empty()
-    audio_file=open('Test1_AFC_60_classics.wav','rb')
+    audio_file=open('Test1_B_PEM_AFC_60_classics.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi5.audio(audio_file_test_bytes, start_time=0)
     sizi6 = st.empty()
     sizi6.write('・音源2')
     sizi7 = st.empty()
-    audio_file=open('Test1_B_PEM_AFC_60_classics.wav','rb')
+    audio_file=open('Test1_AFC_60_classics.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select2=sel1.radio('1-3.リファレンス音源に近い音源を選択してください。',('1','2'))
-    st.select1_2=select2 
+    if select2==1:
+        st.select1_2=2 
+    else
+        st.select1_2=1 
     #df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [st.select1_1], '4': [st.select1_2], '5': [st.select1_3]})
     #st.dataframe(df)
     
@@ -283,7 +289,7 @@ if st.session_state.count == -17:
         st.session_state.count = -16
     
 # 1 3 2
-# bell AFC/FS
+# bell FS-AFC/AFC
 if st.session_state.count == -16:
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*4))
@@ -299,19 +305,22 @@ if st.session_state.count == -16:
     sizi4 = st.empty()
     sizi4.write('・音源1')
     sizi5=st.empty()
-    audio_file=open('Test2_AFC_60_bell.wav','rb')
+    audio_file=open('Test2_FS_AFC_60_bell.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi5.audio(audio_file_test_bytes, start_time=0)
     sizi6 = st.empty()
     sizi6.write('・音源2')
     sizi7=st.empty()
-    audio_file=open('Test2_FS_AFC_60_bell.wav','rb')
+    audio_file=open('Test2_AFC_60_bell.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select1=sel1.radio('2-1.リファレンス音源に近い音源を選択してください。',('1','2'))
-    st.select2_1=select1       
-    
+    if select1==1:
+        st.select2_1=2
+    else
+        st.select2_1=1
+      
     nex=st.empty()
     next1_button=nex.button('次の音源へ(5/18)')
     if next1_button:
@@ -506,7 +515,7 @@ if st.session_state.count == -12:
         my_bar.empty()
         st.session_state.count = -11
         
-#   救急車のサイレン　FS-AFC/B-PEM-AFC
+#   救急車のサイレン　B-PEM-AFC/AFC
 if st.session_state.count == -11: 
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*9))
@@ -522,19 +531,22 @@ if st.session_state.count == -11:
     sizi4 = st.empty()
     sizi4.write('・音源1')
     sizi5 = st.empty()
-    audio_file=open('Test3_AFC_60_ambulance_siren.wav','rb')
+    audio_file=open('Test3_B_PEM_AFC_60_ambulance_siren.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi5.audio(audio_file_test_bytes, start_time=0)
     sizi6 = st.empty()
     sizi6.write('・音源2')
     sizi7 = st.empty()
-    audio_file=open('Test3_B_PEM_AFC_60_ambulance_siren.wav','rb')
+    audio_file=open('Test3_AFC_60_ambulance_siren.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
     select2=sel1.radio('3-3.リファレンス音源に近い音源を選択してください。',('1','2'))
-    st.select3_2=select2
-    
+    if select==1:
+        st.select3_2=2
+    else:
+        st.select3_2=1
+        
     nex=st.empty()
     next1_button=nex.button('次の音源へ(10/18)')
     if next1_button:
