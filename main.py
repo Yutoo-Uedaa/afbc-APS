@@ -115,12 +115,15 @@ if st.session_state.count == -21:
     
 if st.session_state.count == 0:    
     st.write('全体の結果')
-    wine = pd.read_csv('data/outresult_sample6.csv', names=('name','source','  AFC(1)/FS-AFC(2)','  AFC(1)/Prop(2)','  FS-AFC(1)/Prop(2)'))
+    wine = pd.read_csv('data/outresult_sample6.csv', names=('name','source','AFC(1)/FS-AFC(2)','  AFC(1)/Prop(2)','  FS-AFC(1)/Prop(2)'))
     st.dataframe(wine)
     data1=wine
 
     data1=data1.query('source == "クラシック"')
+    s_bool_and = ((data1['score'] == 'クラシック') & (data['AFC(1)/FS-AFC(2)'] =='2'))
+    st.write('クラシックでFS-AFCを選んだ人数:',s_bool_and.sum())
     st.dataframe(data1)
+    
     
     csv_financde = wine.to_csv().encode('utf-8-sig').decode()
     st.download_button(
