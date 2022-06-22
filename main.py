@@ -221,7 +221,7 @@ if st.session_state.count == -18:
     select1=sel1.radio('1-2.リファレンス音源に近い音源を選択してください。',('1','2'))
     if select1==1:
         st.select1_1=2
-    else
+    else:
         st.select1_1=1  
       
     nex=st.empty()
@@ -268,7 +268,7 @@ if st.session_state.count == -17:
     select2=sel1.radio('1-3.リファレンス音源に近い音源を選択してください。',('1','2'))
     if select2==1:
         st.select1_2=2 
-    else
+    else:
         st.select1_2=1 
     #df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [st.select1_1], '4': [st.select1_2], '5': [st.select1_3]})
     #st.dataframe(df)
@@ -318,7 +318,7 @@ if st.session_state.count == -16:
     select1=sel1.radio('2-1.リファレンス音源に近い音源を選択してください。',('1','2'))
     if select1==1:
         st.select2_1=2
-    else
+    else:
         st.select2_1=1
       
     nex=st.empty()
