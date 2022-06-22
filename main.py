@@ -121,7 +121,7 @@ if st.session_state.count == 0:
 
     data1=data1.query('source == "クラシック"')
     st.dataframe(data1)
-    
+    st.bar_chart(data1)
     
     csv_financde = wine.to_csv().encode('utf-8-sig').decode()
     st.download_button(
