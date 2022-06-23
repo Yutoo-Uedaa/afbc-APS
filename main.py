@@ -115,15 +115,19 @@ if st.session_state.count == -21:
     
 if st.session_state.count == 0:    
     st.write('全体の結果')
-    wine = pd.read_csv('data/outresult_sample6.csv', names=('name','source','AFC(1)/FS-AFC(2)','  AFC(1)/Prop(2)','  FS-AFC(1)/Prop(2)'))
+    wine = pd.read_csv('data/outresult_sample6.csv', names=('name','source','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
     st.dataframe(wine)
     data1=wine
 
     sum_all=(data1['source']=='クラシック')
     data1=data1.query('source == "クラシック"')
-    s_bool_and = ((data1['source'] == 'クラシック') & (data1['AFC(1)/FS-AFC(2)'] == 2))
+    s_bool1 = ((data1['source'] == 'クラシック') & (data1['AFC(1)/FS-AFC(2)'] == 2))
+    s_bool2 = ((data1['source'] == 'クラシック') & (data1['AFC(1)/Prop(2)'] == 2))
+    s_bool3 = ((data1['source'] == 'クラシック') & (data1['FS-AFC(1)/Prop(2)'] == 2))
     st.write('アンケート回答数 : '+ str(sum_all.sum()))
-    st.write('クラシック (AFC/FS-AFC) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool_and.sum())+'   FS-AFCを選んだ人数 : '+str(s_bool_and.sum()))
+    st.write('クラシック (AFC/FS-AFC) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool1.sum())+'   FS-AFCを選んだ人数 : '+str(s_bool1.sum()))
+    st.write('クラシック (AFC/Prop) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool2.sum())+'   Propを選んだ人数 : '+str(s_bool2.sum()))
+    st.write('クラシック (FS-AFC/Prop) でFS-AFCを選んだ人数 : '+str(sum_all.sum()-s_bool3.sum())+'   Propを選んだ人数 : '+str(s_bool3.sum()))
     #st.dataframe(data1)
     
     
