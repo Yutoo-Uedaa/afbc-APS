@@ -124,7 +124,7 @@ if st.session_state.count == 0:
     s_bool_and = ((data1['source'] == 'クラシック') & (data1['AFC(1)/FS-AFC(2)'] == 2))
     st.write('アンケート回答数 : '+ str(sum_all.sum()))
     st.write('クラシック (AFC/FS-AFC) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool_and.sum())+'   FS-AFCを選んだ人数 : '+str(s_bool_and.sum()))
-    st.dataframe(data1)
+    #st.dataframe(data1)
     
     
     csv_financde = wine.to_csv().encode('utf-8-sig').decode()
