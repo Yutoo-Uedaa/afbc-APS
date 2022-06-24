@@ -114,9 +114,7 @@ if st.session_state.count == -21:
         st.session_state.count =0
     
 if st.session_state.count == 0:    
-    st.write('全体の結果')
     wine = pd.read_csv('data/outresult_sample6.csv', names=('name','source','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
-    st.dataframe(wine)
     data1=wine
 
     sum_all=(data1['source']=='クラシック')
@@ -128,6 +126,9 @@ if st.session_state.count == 0:
     df1 = pd.DataFrame({'1': ['クラシック','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
                        '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
     st.dataframe(df1)
+    st.bar_chart(df1)
+    st.write('全体の結果')
+    st.dataframe(wine)
     #st.write('クラシック (AFC/FS-AFC) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool1.sum())+'   FS-AFCを選んだ人数 : '+str(s_bool1.sum()))
     #st.write('クラシック (AFC/Prop) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool2.sum())+'   Propを選んだ人数 : '+str(s_bool2.sum()))
     #st.write('クラシック (FS-AFC/Prop) でFS-AFCを選んだ人数 : '+str(sum_all.sum()-s_bool3.sum())+'   Propを選んだ人数 : '+str(s_bool3.sum()))
