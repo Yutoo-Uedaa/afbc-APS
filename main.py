@@ -125,8 +125,8 @@ if st.session_state.count == 0:
     s_bool2 = ((data1['source'] == 'クラシック') & (data1['AFC(1)/Prop(2)'] == 2))
     s_bool3 = ((data1['source'] == 'クラシック') & (data1['FS-AFC(1)/Prop(2)'] == 2))
     st.write('アンケート回答数 : '+ str(sum_all.sum()))
-    df1 = pd.DataFrame({'1': ['クラシック','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',sum_all.sum()-s_bool1.sum(),sum_all.sum()-s_bool2.sum(),0],
-                       '3': ['FS',s_bool1.sum(),0,sum_all.sum()-s_bool3.sum()], '4': ['Prop',0,s_bool2.sum(),s_bool3.sum()]})
+    df1 = pd.DataFrame({'1': ['クラシック','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',sum_all.sum()-s_bool1.sum(),sum_all.sum()-s_bool2.sum(),'0'],
+                       '3': ['FS',s_bool1.sum(),'0',sum_all.sum()-s_bool3.sum()], '4': ['Prop','0',s_bool2.sum(),s_bool3.sum()]})
     st.dataframe(df1)
     #st.write('クラシック (AFC/FS-AFC) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool1.sum())+'   FS-AFCを選んだ人数 : '+str(s_bool1.sum()))
     #st.write('クラシック (AFC/Prop) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool2.sum())+'   Propを選んだ人数 : '+str(s_bool2.sum()))
