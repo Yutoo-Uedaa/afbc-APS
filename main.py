@@ -4,7 +4,7 @@ import datetime
 import pandas as pd
 import streamlit as st
 import numpy as np
-import plotly.express as px
+
 import pickle
 import csv
 
@@ -127,7 +127,7 @@ if st.session_state.count == 0:
     df1 = pd.DataFrame({'1': ['クラシック','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
                        '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
     st.dataframe(df1)
-    st.write(px.bar(df1, x='medal', y='count' ,title="sample figure",color='nation'))
+    
     st.write('全体の結果')
     st.dataframe(wine)
     #st.write('クラシック (AFC/FS-AFC) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool1.sum())+'   FS-AFCを選んだ人数 : '+str(s_bool1.sum()))
