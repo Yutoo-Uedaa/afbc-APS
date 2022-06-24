@@ -134,6 +134,34 @@ if st.session_state.count == 0:
     df2 = pd.DataFrame({'1': ['鐘の音','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
                        '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
     st.dataframe(df2)
+    data1=wine.query('source == "救急車のサイレン"')
+    s_bool1 = ((data1['source'] == '救急車のサイレン') & (data1['AFC(1)/FS-AFC(2)'] == 2))
+    s_bool2 = ((data1['source'] == '救急車のサイレン') & (data1['AFC(1)/Prop(2)'] == 2))
+    s_bool3 = ((data1['source'] == '救急車のサイレン') & (data1['FS-AFC(1)/Prop(2)'] == 2))
+    df3 = pd.DataFrame({'1': ['救急車のサイレン','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
+                       '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
+    st.dataframe(df3)
+    data1=wine.query('source == "ドアベル"')
+    s_bool1 = ((data1['source'] == 'ドアベル') & (data1['AFC(1)/FS-AFC(2)'] == 2))
+    s_bool2 = ((data1['source'] == 'ドアベル') & (data1['AFC(1)/Prop(2)'] == 2))
+    s_bool3 = ((data1['source'] == 'ドアベル') & (data1['FS-AFC(1)/Prop(2)'] == 2))
+    df4 = pd.DataFrame({'1': ['鐘の音','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
+                       '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
+    st.dataframe(df4)
+    data1=wine.query('source == "電話のコール音"')
+    s_bool1 = ((data1['source'] == '電話のコール音') & (data1['AFC(1)/FS-AFC(2)'] == 2))
+    s_bool2 = ((data1['source'] == '電話のコール音') & (data1['AFC(1)/Prop(2)'] == 2))
+    s_bool3 = ((data1['source'] == '電話のコール音') & (data1['FS-AFC(1)/Prop(2)'] == 2))
+    df5 = pd.DataFrame({'1': ['電話のコール音','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
+                       '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
+    st.dataframe(df5)
+    data1=wine.query('source == "英語の音声"')
+    s_bool1 = ((data1['source'] == '英語の音声') & (data1['AFC(1)/FS-AFC(2)'] == 2))
+    s_bool2 = ((data1['source'] == '英語の音声') & (data1['AFC(1)/Prop(2)'] == 2))
+    s_bool3 = ((data1['source'] == '英語の音声') & (data1['FS-AFC(1)/Prop(2)'] == 2))
+    df6 = pd.DataFrame({'1': ['英語の音声','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
+                       '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
+    st.dataframe(df6)
     
     st.write('全体の結果')
     st.dataframe(wine)
