@@ -116,10 +116,10 @@ if st.session_state.count == -21:
     
 if st.session_state.count == 0:    
     wine = pd.read_csv('data/outresult_sample6.csv', names=('name','source','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
-    data1=wine
+    
 
     sum_all=(data1['source']=='クラシック')
-    data1=data1.query('source == "クラシック"')
+    data1=wine.query('source == "クラシック"')
     s_bool1 = ((data1['source'] == 'クラシック') & (data1['AFC(1)/FS-AFC(2)'] == 2))
     s_bool2 = ((data1['source'] == 'クラシック') & (data1['AFC(1)/Prop(2)'] == 2))
     s_bool3 = ((data1['source'] == 'クラシック') & (data1['FS-AFC(1)/Prop(2)'] == 2))
