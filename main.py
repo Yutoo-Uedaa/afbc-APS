@@ -126,52 +126,53 @@ if st.session_state.count == 0:
     s_bool3 = ((data1['source'] == 'クラシック') & (data1['FS-AFC(1)/Prop(2)'] == 2))
     df1 = pd.DataFrame({'1': ['クラシック','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
                        '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
-    st.dataframe(df1)
+    #st.dataframe(df1)
     data1=wine.query('source == "鐘の音"')
     s_bool1 = ((data1['source'] == '鐘の音') & (data1['AFC(1)/FS-AFC(2)'] == 2))
     s_bool2 = ((data1['source'] == '鐘の音') & (data1['AFC(1)/Prop(2)'] == 2))
     s_bool3 = ((data1['source'] == '鐘の音') & (data1['FS-AFC(1)/Prop(2)'] == 2))
     df2 = pd.DataFrame({'1': ['鐘の音','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
                        '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
-    st.dataframe(df2)
+    #st.dataframe(df2)
     data1=wine.query('source == "救急車のサイレン"')
     s_bool1 = ((data1['source'] == '救急車のサイレン') & (data1['AFC(1)/FS-AFC(2)'] == 2))
     s_bool2 = ((data1['source'] == '救急車のサイレン') & (data1['AFC(1)/Prop(2)'] == 2))
     s_bool3 = ((data1['source'] == '救急車のサイレン') & (data1['FS-AFC(1)/Prop(2)'] == 2))
     df3 = pd.DataFrame({'1': ['救急車のサイレン','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
                        '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
-    st.dataframe(df3)
+    #st.dataframe(df3)
     data1=wine.query('source == "ドアベル"')
     s_bool1 = ((data1['source'] == 'ドアベル') & (data1['AFC(1)/FS-AFC(2)'] == 2))
     s_bool2 = ((data1['source'] == 'ドアベル') & (data1['AFC(1)/Prop(2)'] == 2))
     s_bool3 = ((data1['source'] == 'ドアベル') & (data1['FS-AFC(1)/Prop(2)'] == 2))
     df4 = pd.DataFrame({'1': ['鐘の音','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
                        '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
-    st.dataframe(df4)
+    #st.dataframe(df4)
     data1=wine.query('source == "電話のコール音"')
     s_bool1 = ((data1['source'] == '電話のコール音') & (data1['AFC(1)/FS-AFC(2)'] == 2))
     s_bool2 = ((data1['source'] == '電話のコール音') & (data1['AFC(1)/Prop(2)'] == 2))
     s_bool3 = ((data1['source'] == '電話のコール音') & (data1['FS-AFC(1)/Prop(2)'] == 2))
     df5 = pd.DataFrame({'1': ['電話のコール音','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
                        '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
-    st.dataframe(df5)
+    #st.dataframe(df5)
     data1=wine.query('source == "英語の音声"')
     s_bool1 = ((data1['source'] == '英語の音声') & (data1['AFC(1)/FS-AFC(2)'] == 2))
     s_bool2 = ((data1['source'] == '英語の音声') & (data1['AFC(1)/Prop(2)'] == 2))
     s_bool3 = ((data1['source'] == '英語の音声') & (data1['FS-AFC(1)/Prop(2)'] == 2))
     df6 = pd.DataFrame({'1': ['英語の音声','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
                        '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
-    st.dataframe(df6)
+    #st.dataframe(df6)
     
+    DF=pd.concat([df1, df2, df3, df4,df5,df6],axis='index')
     st.write('全体の結果')
-    st.dataframe(wine)
+    st.dataframe(DF)
     #st.write('クラシック (AFC/FS-AFC) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool1.sum())+'   FS-AFCを選んだ人数 : '+str(s_bool1.sum()))
     #st.write('クラシック (AFC/Prop) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool2.sum())+'   Propを選んだ人数 : '+str(s_bool2.sum()))
     #st.write('クラシック (FS-AFC/Prop) でFS-AFCを選んだ人数 : '+str(sum_all.sum()-s_bool3.sum())+'   Propを選んだ人数 : '+str(s_bool3.sum()))
     #st.dataframe(data1)
+    st.dataframe(wine)
     
-    
-    csv_financde = wine.to_csv().encode('utf-8-sig').decode()
+    csv_financde = DF.to_csv().encode('utf-8-sig').decode()
     st.download_button(
     label='CSVダウンロード',
     data=csv_financde,
