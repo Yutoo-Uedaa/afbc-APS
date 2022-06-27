@@ -647,8 +647,8 @@ if st.session_state.count == -10:
     audio_file=open('Test4_FS_AFC_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
-    sel2 = st.empty()
-    select1=sel2.radio('4-1.リファレンス音源に近い音源を選択してください。',('1','2'))
+    sel1 = st.empty()
+    select1=sel1.radio('4-1.リファレンス音源に近い音源を選択してください。',('1','2'))
     if select1=='1':
         st.select4_1=str('2')
     else:
@@ -663,7 +663,7 @@ if st.session_state.count == -10:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        sel2.empty()
+        sel1.empty()
         nex.empty()
         my_bar.empty()
         st.session_state.count = -9
@@ -764,7 +764,7 @@ if st.session_state.count == -7:
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*13))
     sizi = st.empty()
-    sizi.header('5ー１．電話のコール音')
+    sizi.header('５ー１．電話のコール音')
     # リファレンス音源
     sizi2 = st.empty()
     sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
