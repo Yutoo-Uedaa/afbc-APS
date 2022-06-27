@@ -165,6 +165,12 @@ if st.session_state.count == 0:
     
     DF=pd.concat([df1, df2, df3, df4,df5,df6],axis='index')
     st.write('全体の結果')
+    st.bar_chart(df1)
+    # fig, axes=plt.subplots(2, 3, figsize=(9, 6))
+    #
+    # st.pyplot(fig)
+    
+    
     st.dataframe(DF)
     #st.write('クラシック (AFC/FS-AFC) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool1.sum())+'   FS-AFCを選んだ人数 : '+str(s_bool1.sum()))
     #st.write('クラシック (AFC/Prop) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool2.sum())+'   Propを選んだ人数 : '+str(s_bool2.sum()))
