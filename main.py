@@ -4,7 +4,7 @@ import datetime
 import streamlit as st
 import numpy as np
 import pandas as pd
-import matplotlib as plt
+# import matplotlib.pyploy as plt
 
 import pickle
 import csv
@@ -116,7 +116,7 @@ if st.session_state.count == -21:
         st.session_state.count =0
     
 if st.session_state.count == 0:    
-    wine = pd.read_csv('data/outresult_sample6.csv', names=('name','source','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
+    wine = pd.read_csv('data/outresult_TEST1.csv', names=('name','source','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
     
 
     sum_all=(wine['source']=='クラシック')
@@ -167,10 +167,6 @@ if st.session_state.count == 0:
     DF=pd.concat([df1, df2, df3, df4,df5,df6],axis='index')
     st.write('全体の結果')
  
-    fig, ax = plt.subplots(figsize=(10, 8))
-    ax.bar(df1.columns, df1.sum())
-    st.pyplot(fig)
-    
     
     st.dataframe(DF)
     #st.write('クラシック (AFC/FS-AFC) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool1.sum())+'   FS-AFCを選んだ人数 : '+str(s_bool1.sum()))
@@ -1047,9 +1043,9 @@ if st.session_state.count == -1:
                        'FS-AFC(1)/Prop(2)': [st.select1_3,st.select2_3,st.select3_3,st.select4_3,st.select5_3,st.select6_3]
                       })    
     st.dataframe(df)
-    df.to_csv('data/outresult_sample6.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
+    df.to_csv('data/outresult_TEST1.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
     st.write('全体の結果')
-    wine = pd.read_csv('data/outresult_sample6.csv', names=('名前','音声','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
+    wine = pd.read_csv('data/outresult_TEST1.csv', names=('名前','音声','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
     st.dataframe(wine)
         
     st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')    
