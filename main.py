@@ -165,7 +165,7 @@ if st.session_state.count == 0:
     
     DF=pd.concat([df1, df2, df3, df4,df5,df6],axis='index')
     st.write('全体の結果')
-    st.bar_chart(df1,axis='index')
+    st.bar_chart(df1,df2)
     # fig, axes=plt.subplots(2, 3, figsize=(9, 6))
     #
     # st.pyplot(fig)
