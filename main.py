@@ -697,6 +697,7 @@ if st.session_state.count == -9:
     sel1 = st.empty()
     select2=sel1.radio('4-2.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select4_2=select2
+    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(12/18)')
     if next1_button:
@@ -764,6 +765,7 @@ if st.session_state.count == -7:
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*13))
     sizi = st.empty()
+    sel1 = st.empty()
     sizi.header('５ー１．電話のコール音')
     # リファレンス音源
     sizi2 = st.empty()
@@ -900,6 +902,7 @@ if st.session_state.count == -4:
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*16))
     sizi = st.empty()
+    sel1 = st.empty()
     sizi.header('６ー１．英語の音声')
     # リファレンス音源
     sizi2 = st.empty()
