@@ -4,7 +4,7 @@ import datetime
 import streamlit as st
 import numpy as np
 import pandas as pd
-import matplotlibpyplot as plt
+import matplotlib as plt
 
 import pickle
 import csv
