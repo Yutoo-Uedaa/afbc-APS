@@ -350,6 +350,7 @@ if st.session_state.count == -17:
 # 1 3 2
 # bell FS-AFC/AFC
 if st.session_state.count == -16:
+    nex=st.empty()
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*4))
     sizi = st.empty()
@@ -579,6 +580,7 @@ if st.session_state.count == -11:
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*9))
     sizi = st.empty()
+    sel1 = st.empty()
     sizi.header('３ー３．救急車のサイレン')
     # リファレンス音源
     sizi2 = st.empty()
@@ -627,6 +629,7 @@ if st.session_state.count == -10:
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*10))
     sizi = st.empty()
+    sel1 = st.empty()
     sizi.header('４ー１．ドアベル')
     # リファレンス音源
     sizi2 = st.empty()
