@@ -116,7 +116,7 @@ if st.session_state.count == -21:
         st.session_state.count =0
     
 if st.session_state.count == 0:    
-    wine = pd.read_csv('data/outresult_sample1.csv', names=('name','source','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
+    wine = pd.read_csv('data/outresult_test1.csv', names=('name','source','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
     
 
     sum_all=(wine['source']=='クラシック')
@@ -1043,9 +1043,9 @@ if st.session_state.count == -1:
                        'FS-AFC(1)/Prop(2)': [st.select1_3,st.select2_3,st.select3_3,st.select4_3,st.select5_3,st.select6_3]
                       })    
     st.dataframe(df)
-    df.to_csv('data/outresult_sample1.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
+    df.to_csv('data/outresult_test1.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
     st.write('全体の結果')
-    wine = pd.read_csv('data/outresult_sample1.csv', names=('名前','音声','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
+    wine = pd.read_csv('data/outresult_test1.csv', names=('名前','音声','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
     st.dataframe(wine)
         
     st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')    
