@@ -616,6 +616,7 @@ if st.session_state.count == -11:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(10/18)')
     if next1_button:
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -624,7 +625,6 @@ if st.session_state.count == -11:
         sizi6.empty()
         sizi7.empty()
         sel1.empty()
-        nex.empty()
         my_bar.empty()
         st.session_state.count = -10
  
