@@ -236,8 +236,8 @@ if st.session_state.count == -19:
     st.select1_3=select3 
       
     nex=st.empty()
-    #next1_button=
-    if nex.button('次の音源へ(2/18)')
+    next1_button=nex.button('次の音源へ(2/18)')
+    if next1_button:
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
