@@ -238,6 +238,7 @@ if st.session_state.count == -19:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(2/18)')
     if next1_button:
+        sel1.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -285,6 +286,7 @@ if st.session_state.count == -18:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(3/18)')
     if next1_button:
+        sel1.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -335,6 +337,8 @@ if st.session_state.count == -17:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(4/18)')
     if next1_button:
+        sel1.empty()
+        sel1.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -342,7 +346,6 @@ if st.session_state.count == -17:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        sel1.empty()
         nex.empty()
         my_bar.empty()
         st.session_state.count = -16
@@ -384,6 +387,7 @@ if st.session_state.count == -16:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(5/18)')
     if next1_button:
+        sel1.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -428,6 +432,7 @@ if st.session_state.count == -15:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(6/18)')
     if next1_button:
+        sel1.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -474,7 +479,7 @@ if st.session_state.count == -14:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(7/18)')
     if next1_button:
-        
+        sel1.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
