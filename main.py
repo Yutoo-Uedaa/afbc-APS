@@ -1022,6 +1022,7 @@ if st.session_state.count == -2:
         st.select6_1=str('2')  
     else:
         st.select6_1=str('1')
+    
     sizi8=st.empty()    
     sizi8.write('今回のアンケートで気づいたことなどありましたらコメントお願いします。')
     sizi9=st.empty()
