@@ -1022,7 +1022,12 @@ if st.session_state.count == -2:
         st.select6_1=str('2')  
     else:
         st.select6_1=str('1')
-    
+    st.write('今回のアンケートで気づいたことなどありましたらコメントお願いします。')
+    text = st.text_input(label='記入欄', value='')
+    dff=pd.DataFrame({'名前':[st.session_state.key],
+                      'コメント':[text]
+                    })
+    df.to_csv('data/coment1.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
     nex=st.empty()
     next1_button=nex.button('終了')
     if next1_button:
@@ -1052,9 +1057,8 @@ if st.session_state.count == -1:
                       })    
     st.dataframe(df)
     df.to_csv('data/outresult_test2.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
-    st.write('コメント記入欄')
-    text = st.text_input(label='記入欄', value='')
-    st.write('input: ', text)
+
+      
     
         
     st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')    
