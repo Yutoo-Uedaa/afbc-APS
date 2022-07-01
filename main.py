@@ -11,7 +11,7 @@ import csv
 
 
 kyouji = """本実験は、エントレインメント抑制機能の性能評価として、通常のNLMS、周波数シフトを用いたNLMS、提案手法の出力音声を聴き比べ評価するものです。
-                    \n提示されたリファレンス音源と評価音源の二つを聴き比べ、リファレンス音源にどちらが近い音かを評価してください。
+                    \n提示されたリファレンス音源と評価音源の音源１、音源２を聴き比べ、リファレンス音源にどちらが近い音かを回答してください。
                     \n６つの音源によって調査を行います。
                     \n　　・クラシック
                     \n　　・鐘の音
@@ -215,7 +215,7 @@ if st.session_state.count == -19:
     sizi.header('１ー１．クラシック')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test1_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -259,7 +259,7 @@ if st.session_state.count == -18:
     sizi.header('１ー２．クラシック')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test1_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -306,7 +306,7 @@ if st.session_state.count == -17:
     sizi.header('１ー３．クラシック')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test1_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -355,7 +355,7 @@ if st.session_state.count == -16:
     sizi.header('２ー１．鐘の音')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test2_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -402,7 +402,7 @@ if st.session_state.count == -15:
     sizi.header('２ー２．鐘の音')
    # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test2_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -446,7 +446,7 @@ if st.session_state.count == -14:
     sizi.header('２ー３．鐘の音')
      # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test2_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -490,7 +490,7 @@ if st.session_state.count == -13:
     sizi.header('３ー１．救急車のサイレン')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test3_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -533,7 +533,7 @@ if st.session_state.count == -12:
     sizi.header('３ー２．救急車のサイレン')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test3_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -577,7 +577,7 @@ if st.session_state.count == -11:
     sizi.header('３ー３．救急車のサイレン')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test3_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -625,7 +625,7 @@ if st.session_state.count == -10:
     sizi.header('４ー１．ドアベル')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test4_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -672,7 +672,7 @@ if st.session_state.count == -9:
     sizi.header('４ー２．ドアベル')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test4_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -715,7 +715,7 @@ if st.session_state.count == -8:
     sizi.header('４ー３．ドアベル')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test4_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -764,7 +764,7 @@ if st.session_state.count == -7:
     sizi.header('５ー１．電話のコール音')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test5_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -813,7 +813,7 @@ if st.session_state.count == -6:
     sizi.header('５ー２．電話のコール音')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test5_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -858,7 +858,7 @@ if st.session_state.count == -5:
     sizi.header('５ー３．電話のコール音')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test5_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -905,7 +905,7 @@ if st.session_state.count == -4:
     sizi.header('６ー１．英語の音声')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test6_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -951,7 +951,7 @@ if st.session_state.count == -3:
     sizi.header('６ー２．英語の音声')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test6_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
@@ -999,7 +999,7 @@ if st.session_state.count == -2:
     sizi.header('６ー３．英語の音声')
     # リファレンス音源
     sizi2 = st.empty()
-    sizi2.write('・リファレンス音源（リファレンス音源は何回聞いても問題ありません）')
+    sizi2.write('・リファレンス音源')
     sizi3=st.empty()
     audio_file=open('Test6_reference_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
