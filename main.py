@@ -116,7 +116,7 @@ if st.session_state.count == -21:
         st.session_state.count =0
     
 if st.session_state.count == 0:    
-    wine = pd.read_csv('data/outresult_test4.csv', names=('name','source','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
+    wine = pd.read_csv('data/outresult_pretest1.csv', names=('name','source','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
     #st.dataframe(wine)
     wine1=wine[(wine['AFC(1)/FS-AFC(2)'] != "value") & (wine['AFC(1)/Prop(2)'] != "value") & (wine['FS-AFC(1)/Prop(2)'] != "value")]
     sum_all=((wine1['source']=='クラシック'))
@@ -1061,7 +1061,7 @@ if st.session_state.count == -1:
                        'FS-AFC(1)/Prop(2)': [st.select1_3,st.select2_3,st.select3_3,st.select4_3,st.select5_3,st.select6_3]
                       })    
     st.dataframe(df)
-    df.to_csv('data/outresult_test4.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
+    df.to_csv('data/outresult_pretest1.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
     st.write('結果が"value"の場合はお手数ですがもう一度お願いします。')
     
       
