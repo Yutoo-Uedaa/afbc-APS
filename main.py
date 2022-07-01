@@ -1027,7 +1027,7 @@ if st.session_state.count == -2:
     dff=pd.DataFrame({'名前':[st.session_state.key],
                       'コメント':[text]
                     })
-    df.to_csv('data/coment1.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
+    dff.to_csv('data/coment1.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
     nex=st.empty()
     next1_button=nex.button('終了')
     if next1_button:
