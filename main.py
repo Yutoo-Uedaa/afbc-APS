@@ -281,11 +281,12 @@ if st.session_state.count == -18:
     if select1=='1':
         st.select1_1=str('2')
     else:
-        st.select1_1=str('1')  
-      
+        st.select1_1=str('1')   
     nex=st.empty()
     next1_button=nex.button('次の音源へ(3/18)')
     if next1_button:
+        sel1.empty()
+        nex.empty()
         sel1.empty()
         sizi.empty()
         sizi2.empty()
@@ -294,8 +295,6 @@ if st.session_state.count == -18:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        sel1.empty()
-        nex.empty()
         my_bar.empty()
         st.session_state.count = -17
         
@@ -330,14 +329,11 @@ if st.session_state.count == -17:
         st.select1_2=str('2')  
     else:
         st.select1_2=str('1')  
-        
-    #df = pd.DataFrame({'1': [st.session_state.key], '2': ['クラシック'], '3': [st.select1_1], '4': [st.select1_2], '5': [st.select1_3]})
-    #st.dataframe(df)
-    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(4/18)')
     if next1_button:
         sel1.empty()
+        nex.empty()
         sel1.empty()
         sizi.empty()
         sizi2.empty()
@@ -346,7 +342,6 @@ if st.session_state.count == -17:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        nex.empty()
         my_bar.empty()
         st.session_state.count = -16
     
@@ -383,11 +378,11 @@ if st.session_state.count == -16:
         st.select2_1=str('2')  
     else:
         st.select2_1=str('1')  
-      
     nex=st.empty()
     next1_button=nex.button('次の音源へ(5/18)')
     if next1_button:
         sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -396,7 +391,6 @@ if st.session_state.count == -16:
         sizi6.empty()
         sizi7.empty()
         sel1.empty()
-        nex.empty()
         my_bar.empty()
         st.session_state.count = -15
     
@@ -428,11 +422,11 @@ if st.session_state.count == -15:
     sel1 = st.empty()
     select3=sel1.radio('2-2.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select2_3=select3  
-    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(6/18)')
     if next1_button:
         sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -441,7 +435,6 @@ if st.session_state.count == -15:
         sizi6.empty()
         sizi7.empty()
         sel1.empty()
-        nex.empty()
         my_bar.empty()
         st.session_state.count = -14
         
@@ -473,13 +466,11 @@ if st.session_state.count == -14:
     sel1 = st.empty()
     select2=sel1.radio('2-3.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select2_2=select2  
-    #df = pd.DataFrame({'1': [st.session_state.key,st.session_state.key], '2': ['クラシック','鐘の音'], '3': [st.select1_1,st.select2_1], '4': [st.select1_2,st.select2_2], '5': [st.select1_3,st.select2_3]})
-    #st.dataframe(df)
-    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(7/18)')
     if next1_button:
         sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -487,8 +478,6 @@ if st.session_state.count == -14:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        sel1.empty()
-        nex.empty()
         my_bar.empty()
         st.session_state.count = -13
 
@@ -518,12 +507,14 @@ if st.session_state.count == -13:
     audio_file=open('Test3_FS_AFC_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
-    sel2 = st.empty()
+    sel1 = st.empty()
     select1=sel2.radio('3-1.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select3_1=select1    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(8/18)')
     if next1_button:
+        sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -531,8 +522,6 @@ if st.session_state.count == -13:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        sel2.empty()
-        nex.empty()
         my_bar.empty()
         st.session_state.count = -12
     
@@ -564,10 +553,11 @@ if st.session_state.count == -12:
     sel1 = st.empty()
     select3=sel1.radio('3-2.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select3_3=select3   
-    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(9/18)')
     if next1_button:
+        sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -575,8 +565,6 @@ if st.session_state.count == -12:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        sel1.empty()
-        nex.empty()
         my_bar.empty()
         st.session_state.count = -11
         
@@ -612,10 +600,10 @@ if st.session_state.count == -11:
         st.select3_2=str('2')  
     else:
         st.select3_2=str('1')  
-        
     nex=st.empty()
     next1_button=nex.button('次の音源へ(10/18)')
     if next1_button:
+        sel1.empty()
         nex.empty()
         sizi.empty()
         sizi2.empty()
@@ -624,7 +612,6 @@ if st.session_state.count == -11:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        sel1.empty()
         my_bar.empty()
         st.session_state.count = -10
  
@@ -664,6 +651,8 @@ if st.session_state.count == -10:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(11/18)')
     if next1_button:
+        sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -671,8 +660,6 @@ if st.session_state.count == -10:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        sel1.empty()
-        nex.empty()
         my_bar.empty()
         st.session_state.count = -9
  
@@ -705,10 +692,11 @@ if st.session_state.count == -9:
     sel1 = st.empty()
     select2=sel1.radio('4-2.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select4_2=select2
-    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(12/18)')
     if next1_button:
+        sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -716,8 +704,6 @@ if st.session_state.count == -9:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        sel1.empty()
-        nex.empty()
         my_bar.empty()
         st.session_state.count = -8
         
@@ -752,10 +738,11 @@ if st.session_state.count == -8:
         st.select4_3=str('2')
     else:
         st.select4_3=str('1')
-    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(13/18)')
     if next1_button:
+        sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -804,6 +791,8 @@ if st.session_state.count == -7:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(14/18)')
     if next1_button:
+        sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -844,10 +833,11 @@ if st.session_state.count == -6:
     sel1 = st.empty()
     select1=sel1.radio('5-2.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select5_1=select1
-    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(15/18)')
     if next1_button:
+        sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -888,10 +878,11 @@ if st.session_state.count == -5:
     sel1 = st.empty()
     select3=sel1.radio('5-3.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select5_3=select3   
-    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(16/18)')
     if next1_button:
+        sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -938,6 +929,8 @@ if st.session_state.count == -4:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(17/18)')
     if next1_button:
+        sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -984,6 +977,8 @@ if st.session_state.count == -3:
     nex=st.empty()
     next1_button=nex.button('次の音源へ(18/18)')
     if next1_button:
+        sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -1031,6 +1026,8 @@ if st.session_state.count == -2:
     nex=st.empty()
     next1_button=nex.button('終了')
     if next1_button:
+        sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
