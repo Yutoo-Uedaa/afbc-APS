@@ -1024,14 +1024,15 @@ if st.session_state.count == -2:
     else:
         st.select6_1=str('1')
     
-    sizi8=st.empty()    
-    sizi8.write('今回のアンケートで気づいたことなどありましたらコメントお願いします。')
-    sizi9=st.empty()
-    text = sizi9.text_input(label='記入欄', value='')
+    explain=st.empty()    
+    with explain.form("my_form"):
+        st.write('今回のアンケートで気づいたことなどありましたらコメントお願いします。')
+        text = st.text_input(label='記入欄', value='')
     dff=pd.DataFrame({'名前':[st.session_state.key],
                       'コメント':[text]
                     })
     dff.to_csv('data/coment1.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
+    
     nex=st.empty()
     next1_button=nex.button('終了')
     if next1_button:
