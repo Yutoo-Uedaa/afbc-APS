@@ -253,8 +253,8 @@ if st.session_state.count == -19:
             sel1.empty()
             nex.empty()
             my_bar.empty()
-            conf.empty()
             st.session_state.count = -18
+            conf.empty()
     
 #  classic FS-AFC/AFC    
 if st.session_state.count == -18: 
