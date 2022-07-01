@@ -508,7 +508,7 @@ if st.session_state.count == -13:
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select1=sel2.radio('3-1.リファレンス音源に近い音源を選択してください。',('1','2'))
+    select1=sel1.radio('3-1.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select3_1=select1    
     nex=st.empty()
     next1_button=nex.button('次の音源へ(8/18)')
