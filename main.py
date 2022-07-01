@@ -235,23 +235,26 @@ if st.session_state.count == -19:
     sel1 = st.empty()
     select3=sel1.radio('1-1.リファレンス音源に近い音源を選択してください。',('1','2'))
     st.select1_3=select3 
-      
-    nex=st.empty()
-    next1_button=nex.button('次の音源へ(2/18)')
-    if next1_buttonand and (st.session_state.time - st.session_state.time2) > 2:
-        sel1.empty()
-        sizi.empty()
-        sizi2.empty()
-        sizi3.empty()
-        sizi4.empty()
-        sizi5.empty()
-        sizi6.empty()
-        sizi7.empty()
-        sel1.empty()
-        nex.empty()
-        my_bar.empty()
-        st.session_state.time2 = time.time()
-        st.session_state.count = -18
+    
+    conf=st.empty()
+    conf1=conf.button('答えを確定')
+    if conf1:
+       nex=st.empty()
+        next1_button=nex.button('次の音源へ(2/18)')
+        if next1_buttonand and (st.session_state.time - st.session_state.time2) > 2:
+            sel1.empty()
+            sizi.empty()
+            sizi2.empty()
+            sizi3.empty()
+            sizi4.empty()
+            sizi5.empty()
+            sizi6.empty()
+            sizi7.empty()
+            sel1.empty()
+            nex.empty()
+            my_bar.empty()
+            conf.empty()
+            st.session_state.count = -18
     
 #  classic FS-AFC/AFC    
 if st.session_state.count == -18: 
