@@ -254,8 +254,7 @@ if st.session_state.count == -19:
             nex.empty()
             my_bar.empty()
             st.session_state.count = -18
-            conf.empty()
-    
+
 #  classic FS-AFC/AFC    
 if st.session_state.count == -18: 
     my_bar = st.progress(0)
