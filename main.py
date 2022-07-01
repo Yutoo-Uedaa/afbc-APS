@@ -207,6 +207,7 @@ if st.session_state.count == -20:
         st.session_state.count = -19
 # 3 1 2        
 # クラシック FS/B-PEM-AFC
+st.session_state.time = time.time()
 if st.session_state.count == -19:
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*1))
