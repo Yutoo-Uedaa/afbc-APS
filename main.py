@@ -239,7 +239,7 @@ if st.session_state.count == -19:
     conf=st.empty()
     conf1=conf.button('答えを確定')
     if conf1:
-       nex=st.empty()
+        nex=st.empty()
         next1_button=nex.button('次の音源へ(2/18)')
         if next1_buttonand and (st.session_state.time - st.session_state.time2) > 2:
             sel1.empty()
