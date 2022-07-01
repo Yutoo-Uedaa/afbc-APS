@@ -237,7 +237,7 @@ if st.session_state.count == -19:
       
     nex=st.empty()
     next1_button=nex.button('次の音源へ(2/18)')
-    if next1_button:
+    if next1_buttonand and (st.session_state.time - st.session_state.time2) > 2:
         sel1.empty()
         sizi.empty()
         sizi2.empty()
@@ -249,6 +249,7 @@ if st.session_state.count == -19:
         sel1.empty()
         nex.empty()
         my_bar.empty()
+        st.session_state.time2 = time.time()
         st.session_state.count = -18
     
 #  classic FS-AFC/AFC    
