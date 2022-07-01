@@ -1035,6 +1035,7 @@ if st.session_state.count == -2:
     if next1_button:
         sel1.empty()
         nex.empty()
+        sizi9.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -1043,9 +1044,6 @@ if st.session_state.count == -2:
         sizi6.empty()
         sizi7.empty()
         sizi8.empty()
-        sizi9.empty()
-        sel1.empty()
-        nex.empty()
         my_bar.empty()
         st.session_state.count = -1
         
