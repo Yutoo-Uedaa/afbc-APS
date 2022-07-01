@@ -1049,6 +1049,8 @@ if st.session_state.count == -2:
         st.session_state.count = -1
         
 if st.session_state.count == -1:
+    sel1.empty()
+    sizi9.empty()
     my_bar = st.progress(0)
     my_bar.progress(int(100/6*6))
     st.write('自分の結果')
