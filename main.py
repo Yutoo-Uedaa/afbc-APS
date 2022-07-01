@@ -240,6 +240,7 @@ if st.session_state.count == -19:
     next1_button=nex.button('次の音源へ(2/18)')
     if next1_button:
         sel1.empty()
+        nex.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -247,15 +248,11 @@ if st.session_state.count == -19:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        sel1.empty()
-        nex.empty()
         my_bar.empty()
         st.session_state.count = -18
 
 #  classic FS-AFC/AFC    
 if st.session_state.count == -18:
-    sel1.empty()
-    nex.empty()
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*2))
     sizi = st.empty()
