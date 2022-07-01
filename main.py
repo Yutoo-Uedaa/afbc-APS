@@ -1022,8 +1022,10 @@ if st.session_state.count == -2:
         st.select6_1=str('2')  
     else:
         st.select6_1=str('1')
-    st.write('今回のアンケートで気づいたことなどありましたらコメントお願いします。')
-    text = st.text_input(label='記入欄', value='')
+    sizi8=st.empty()    
+    sizi8.write('今回のアンケートで気づいたことなどありましたらコメントお願いします。')
+    sizi9=st.empty()
+    text = sizi9.text_input(label='記入欄', value='')
     dff=pd.DataFrame({'名前':[st.session_state.key],
                       'コメント':[text]
                     })
@@ -1040,6 +1042,8 @@ if st.session_state.count == -2:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
+        sizi8.empty()
+        sizi9.empty()
         sel1.empty()
         nex.empty()
         my_bar.empty()
@@ -1057,7 +1061,8 @@ if st.session_state.count == -1:
                       })    
     st.dataframe(df)
     df.to_csv('data/outresult_test2.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
-
+    
+    
       
     
         
