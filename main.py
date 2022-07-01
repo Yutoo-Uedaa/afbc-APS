@@ -118,9 +118,8 @@ if st.session_state.count == -21:
 if st.session_state.count == 0:    
     wine = pd.read_csv('data/outresult_test2.csv', names=('name','source','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
     
-    wine[wine['AFC(1)/FS-AFC(2)'] != "value"]
+    wine=[wine['AFC(1)/FS-AFC(2)'] != "value"]
     sum_all=(wine['source']=='クラシック')
-    st.dataframe(wine)
     st.write('アンケート回答数 : '+ str(sum_all.sum()))
     data1=wine.query('source == "クラシック"')
     s_bool1 = ((data1['source'] == 'クラシック') & (data1['AFC(1)/FS-AFC(2)'] == 2))
