@@ -136,9 +136,9 @@ if st.session_state.count == 0:
                        '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
     #st.dataframe(df2)
     data1=wine1.query('source == "救急車のサイレン"')
-    s_bool1 = ((data1['source'] == '救急車のサイレン') & ((data1['AFC(1)/FS-AFC(2)'] == '2') or (data1['AFC(1)/FS-AFC(2)'] == 2)))
-    s_bool2 = ((data1['source'] == '救急車のサイレン') & ((data1['AFC(1)/Prop(2)'] == '2') or (data1['AFC(1)/Prop(2)'] == 2)))
-    s_bool3 = ((data1['source'] == '救急車のサイレン') & ((data1['FS-AFC(1)/Prop(2)'] == '2') or (data1['FS-AFC(1)/Prop(2)'] == 2)))
+    s_bool1 = ((data1['source'] == '救急車のサイレン') & ((data1['AFC(1)/FS-AFC(2)'] == '2') | (data1['AFC(1)/FS-AFC(2)'] == 2)))
+    s_bool2 = ((data1['source'] == '救急車のサイレン') & ((data1['AFC(1)/Prop(2)'] == '2') | (data1['AFC(1)/Prop(2)'] == 2)))
+    s_bool3 = ((data1['source'] == '救急車のサイレン') & ((data1['FS-AFC(1)/Prop(2)'] == '2') | (data1['FS-AFC(1)/Prop(2)'] == 2)))
     df3 = pd.DataFrame({'1': ['救急車のサイレン','AFC/FS-AFC','AFC/Prop','FS-AFC/Prop'], '2': ['AFC',str(sum_all.sum()-s_bool1.sum()),str(sum_all.sum()-s_bool2.sum()),'0'],
                        '3': ['FS',str(s_bool1.sum()),'0',str(sum_all.sum()-s_bool3.sum())], '4': ['Prop','0',str(s_bool2.sum()),str(s_bool3.sum())]})
     #st.dataframe(df3)
