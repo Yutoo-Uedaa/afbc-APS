@@ -1049,9 +1049,7 @@ if st.session_state.count == -2:
         explain.empty()
         my_bar.empty()
         st.session_state.count = -1
-        sel1.empty()
-        sizi9.empty()
-        
+
 if st.session_state.count == -1:
     my_bar = st.progress(0)
     my_bar.progress(int(100/6*6))
