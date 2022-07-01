@@ -1052,9 +1052,10 @@ if st.session_state.count == -1:
                       })    
     st.dataframe(df)
     df.to_csv('data/outresult_test2.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
-    st.write('全体の結果')
-    wine = pd.read_csv('data/outresult_test2.csv', names=('名前','音声','AFC(1)/FS-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/Prop(2)'))
-    st.dataframe(wine)
+    st.write('コメント記入欄')
+    text = st.text_input(label='記入欄', value='')
+    st.write('input: ', text)
+    
         
     st.title('実験は終了です。ご協力ありがとうございました。ブラウザを閉じてください')    
     st.balloons()
