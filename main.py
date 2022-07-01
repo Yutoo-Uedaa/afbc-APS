@@ -993,6 +993,7 @@ if st.session_state.count == -3:
         
 #   英語の音声　AFC/FS-AFC
 if st.session_state.count == -2: 
+
     my_bar = st.progress(0)
     my_bar.progress(int(100/18*18))
     sizi = st.empty()
@@ -1047,6 +1048,8 @@ if st.session_state.count == -2:
         sizi8.empty()
         my_bar.empty()
         st.session_state.count = -1
+        sel1.empty()
+        sizi9.empty()
         
 if st.session_state.count == -1:
     sel1.empty()
