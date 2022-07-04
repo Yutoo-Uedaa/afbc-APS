@@ -175,6 +175,8 @@ if st.session_state.count == 0:
     #st.dataframe(data1)
     st.dataframe(wine1)
     
+    coment=pd.read_csv('data/coment1.csv')
+    st.dataframe(coment)
     csv_financde = DF.to_csv().encode('utf-8-sig').decode()
     st.download_button(
     label='CSVダウンロード',
