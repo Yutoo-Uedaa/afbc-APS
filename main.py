@@ -1039,7 +1039,6 @@ if st.session_state.count == -2:
         sizi5.empty()
         sizi6.empty()
         sizi7.empty()
-        explain.empty()
         my_bar.empty()
         st.session_state.count = -1
 
