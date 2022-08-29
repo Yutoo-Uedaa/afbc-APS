@@ -133,13 +133,7 @@ if st.session_state.count == -40:
         sizi.empty()
         sizi2.empty()
         st.session_state.count =0
-                               'AFC(1)/FS-AFC(2)': [st.select1_1,st.select2_1,st.select3_1,st.select4_1,st.select5_1,st.select6_1],
-                       'AFC(1)/swPEM-AFC(2)': [st.select1_2,st.select2_2,st.select3_2,st.select4_2,st.select5_2,st.select6_2],
-                       'AFC(1)/Prop(2)': [st.select1_3,st.select2_3,st.select3_3,st.select4_3,st.select5_3,st.select6_3], 
-                       'FS-AFC(1)/swPEM-AFC(2)': [st.select1_4,st.select2_4,st.select3_4,st.select4_4,st.select5_4,st.select6_4],
-                       'FS-AFC(1)/Prop(2)': [st.select1_5,st.select2_5,st.select3_5,st.select4_5,st.select5_5,st.select6_5],
-                       'swPEM-AFC(1)/Prop(2)'
-    
+
 if st.session_state.count == 0:    
     wine1 = pd.read_csv('data/outresult_TEST1.csv', names=('name','source','AFC(1)/FS-AFC(2)','AFC(1)/swPEM-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/swPEM-AFC(2)','FS-AFC(1)/Prop(2)',,'swPEM-AFC(1)/prop(2)'))
     st.dataframe(wine)
