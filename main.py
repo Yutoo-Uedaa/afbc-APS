@@ -1800,12 +1800,12 @@ if st.session_state.count == -1:
     st.write('自分の結果')
     df = pd.DataFrame({'名前': [st.session_state.key,st.session_state.key,st.session_state.key,st.session_state.key,st.session_state.key,st.session_state.key], 
                        '音声': ['クラシック','鐘の音','救急車のサイレン','ドアベル','電話のコール音','英語の音声'], 
-                       'AFC(1)/FS-AFC(2)': [st.select1_1,st.select2_1,st.select3_1,st.select4_1,st.select5_1,st.select6_1],
-                       'AFC(1)/swPEM-AFC(2)': [st.select1_2,st.select2_2,st.select3_2,st.select4_2,st.select5_2,st.select6_2],
-                       'AFC(1)/Prop(2)': [st.select1_3,st.select2_3,st.select3_3,st.select4_3,st.select5_3,st.select6_3], 
-                       'FS-AFC(1)/swPEM-AFC(2)': [st.select1_4,st.select2_4,st.select3_4,st.select4_4,st.select5_4,st.select6_4],
-                       'FS-AFC(1)/Prop(2)': [st.select1_5,st.select2_5,st.select3_5,st.select4_5,st.select5_5,st.select6_5],
-                       'swPEM-AFC(1)/Prop(2)': [st.select1_6,st.select2_6,st.select3_6,st.select4_6,st.select5_6,st.select6_6],
+                       '　AFC(1)/FS-AFC(2)　': [st.select1_1,st.select2_1,st.select3_1,st.select4_1,st.select5_1,st.select6_1],
+                       '　AFC(1)/swPEM-AFC(2)　': [st.select1_2,st.select2_2,st.select3_2,st.select4_2,st.select5_2,st.select6_2],
+                       '　AFC(1)/Prop(2)　': [st.select1_3,st.select2_3,st.select3_3,st.select4_3,st.select5_3,st.select6_3], 
+                       '　FS-AFC(1)/swPEM-AFC(2)　': [st.select1_4,st.select2_4,st.select3_4,st.select4_4,st.select5_4,st.select6_4],
+                       '　FS-AFC(1)/Prop(2)　': [st.select1_5,st.select2_5,st.select3_5,st.select4_5,st.select5_5,st.select6_5],
+                       '　swPEM-AFC(1)/Prop(2)　': [st.select1_6,st.select2_6,st.select3_6,st.select4_6,st.select5_6,st.select6_6],
                       })    
     st.dataframe(df)
     df.to_csv('data/outresult_TEST1.csv', mode='a',header=False, index=False,encoding='utf_8_sig')
