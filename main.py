@@ -58,22 +58,37 @@ if 'key' not in st.session_state:
     st.select1_4='value' #FS/swAFC
     st.select1_5='value' #FS/Prop
     st.select1_6='value' #swAFC/Prop
+    st.select2_1='value' #AFC/FS
+    st.select2_2='value' #AFC/swAFC
+    st.select2_3='value' #AFC/Prop
+    st.select2_4='value' #FS/swAFC
+    st.select2_5='value' #FS/Prop
+    st.select2_6='value' #swAFC/Prop
+    st.select3_1='value' #AFC/FS
+    st.select3_2='value' #AFC/swAFC
+    st.select3_3='value' #AFC/Prop
+    st.select3_4='value' #FS/swAFC
+    st.select3_5='value' #FS/Prop
+    st.select3_6='value' #swAFC/Prop
+    st.select4_1='value' #AFC/FS
+    st.select4_2='value' #AFC/swAFC
+    st.select4_3='value' #AFC/Prop
+    st.select4_4='value' #FS/swAFC
+    st.select4_5='value' #FS/Prop
+    st.select4_6='value' #swAFC/Prop    
+    st.select5_1='value' #AFC/FS
+    st.select5_2='value' #AFC/swAFC
+    st.select5_3='value' #AFC/Prop
+    st.select5_4='value' #FS/swAFC
+    st.select5_5='value' #FS/Prop
+    st.select5_6='value' #swAFC/Prop
+    st.select6_1='value' #AFC/FS
+    st.select6_2='value' #AFC/swAFC
+    st.select6_3='value' #AFC/Prop
+    st.select6_4='value' #FS/swAFC
+    st.select6_5='value' #FS/Prop
+    st.select6_6='value' #swAFC/Prop
     
-    st.select2_1='value' 
-    st.select2_2='value' 
-    st.select2_3='value'
-    st.select3_1='value'
-    st.select3_2='value'
-    st.select3_3='value'
-    st.select4_1='value'
-    st.select4_2='value'
-    st.select4_3='value'
-    st.select5_1='value'
-    st.select5_2='value'
-    st.select5_3='value'
-    st.select6_1='value'
-    st.select6_2='value'
-    st.select6_3='value'
 if 'time' not in st.session_state:
     st.session_state.time = 0
 if 'time2' not in st.session_state:
@@ -97,7 +112,7 @@ if st.session_state.count == -40:
     
     with explain.form("my_form"):
         sub_name = st.text_input("名前を入力してください   　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　""　　　　　 　　　　  　　　　　 ""例：リオン太郎さんの場合 >>>　t_rion")
-        sub_age = st.selectbox('年代を選択してください', ('20代', '30代', '40代', '50代', '60代', '非公表',))
+        sub_age = st.selectbox('年代を選択してください', ('10代', '20代', '30代', '40代', '50代', '60代', '非公表',))
         submitted = st.form_submit_button("次へ")
 
     if submitted and sub_name != "":
