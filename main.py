@@ -136,7 +136,7 @@ if st.session_state.count == -40:
 
 if st.session_state.count == 0:    
     wine1 = pd.read_csv('data/outresult_TEST1.csv', names=('name','source','AFC(1)/FS-AFC(2)','AFC(1)/swPEM-AFC(2)','AFC(1)/Prop(2)','FS-AFC(1)/swPEM-AFC(2)','FS-AFC(1)/Prop(2)','swPEM-AFC(1)/prop(2)'))
-    st.dataframe(wine)
+    st.dataframe(wine1)
     sum_all=((wine1['source']=='クラシック'))
     st.write('アンケート回答数 : '+ str(sum_all.sum()))
     data1=wine1.query('source == "クラシック"')
