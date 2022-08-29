@@ -47,16 +47,20 @@ def format_func3(option):
     return CHOICES3[option]
 
 if 'count' not in st.session_state: #ページ番号をつかさどっている
-    st.session_state.count = -21
+    st.session_state.count = -40
 if 'group' not in st.session_state:
     st.session_state.group = -1
 if 'key' not in st.session_state:
     st.session_state.key = 'value'
-    st.select1_1='value'
-    st.select1_2='value'
-    st.select1_3='value'
-    st.select2_1='value'
-    st.select2_2='value'
+    st.select1_1='value' #AFC/PEM
+    st.select1_2='value' #AFC/swAFC
+    st.select1_3='value' #AFC/Prop
+    st.select1_4='value' #PEM/swAFC
+    st.select1_5='value' #PEM/Prop
+    st.select1_5='value' #swAFC/Prop
+    st.select1[]='value'
+    st.select2_1='value' 
+    st.select2_2='value' 
     st.select2_3='value'
     st.select3_1='value'
     st.select3_2='value'
@@ -76,7 +80,7 @@ if 'time2' not in st.session_state:
     st.session_state.time2 = 0    
     
 
-if st.session_state.count == -21:
+if st.session_state.count == -40:
     st.title('APS評価実験') 
     explainBef = st.empty()
     with explainBef.expander("実験の説明", True):
@@ -103,7 +107,7 @@ if st.session_state.count == -21:
         sizi.empty()
         sizi2.empty()
         resu.empty()
-        st.session_state.count = -20
+        st.session_state.count = -39
     elif submitted:
         st.warning('名前を入力して下さい')
         
@@ -168,12 +172,12 @@ if st.session_state.count == 0:
     st.write('全体の結果')
  
     
-    st.dataframe(DF)
+    #st.dataframe(DF)
     #st.write('クラシック (AFC/FS-AFC) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool1.sum())+'   FS-AFCを選んだ人数 : '+str(s_bool1.sum()))
     #st.write('クラシック (AFC/Prop) でAFCを選んだ人数 : '+str(sum_all.sum()-s_bool2.sum())+'   Propを選んだ人数 : '+str(s_bool2.sum()))
     #st.write('クラシック (FS-AFC/Prop) でFS-AFCを選んだ人数 : '+str(sum_all.sum()-s_bool3.sum())+'   Propを選んだ人数 : '+str(s_bool3.sum()))
     #st.dataframe(data1)
-    st.dataframe(wine1)
+    #st.dataframe(wine1)
     
     coment=pd.read_csv('data/coment1.csv')
     st.dataframe(coment)
@@ -185,7 +189,7 @@ if st.session_state.count == 0:
     mime='text/csv'
 )
     
-if st.session_state.count == -20:
+if st.session_state.count == -39:
     sizi = st.empty()
     sizi.subheader('提示音サンプル')
     
