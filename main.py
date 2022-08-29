@@ -52,13 +52,13 @@ if 'group' not in st.session_state:
     st.session_state.group = -1
 if 'key' not in st.session_state:
     st.session_state.key = 'value'
-    st.select1_1='value' #AFC/PEM
+    st.select1_1='value' #AFC/FS
     st.select1_2='value' #AFC/swAFC
     st.select1_3='value' #AFC/Prop
-    st.select1_4='value' #PEM/swAFC
-    st.select1_5='value' #PEM/Prop
-    st.select1_5='value' #swAFC/Prop
-    st.select1[]='value'
+    st.select1_4='value' #FS/swAFC
+    st.select1_5='value' #FS/Prop
+    st.select1_6='value' #swAFC/Prop
+    
     st.select2_1='value' 
     st.select2_2='value' 
     st.select2_3='value'
@@ -210,13 +210,14 @@ if st.session_state.count == -39:
         sizi3.empty()
         sizi4.empty()
         start.empty()
-        st.session_state.count = -19
-# 3 1 2        
-# クラシック FS/B-PEM-AFC
+        st.session_state.count = -38
+######################################################################################
+#
+# クラシック1-1 
 st.session_state.time = time.time()
-if st.session_state.count == -19:
+if st.session_state.count == -38:
     my_bar = st.progress(0)
-    my_bar.progress(int(100/18*1))
+    my_bar.progress(int(100/36*1))
     sizi = st.empty()
     sizi.header('１ー１．クラシック')
     # リファレンス音源
@@ -229,21 +230,20 @@ if st.session_state.count == -19:
     sizi4 = st.empty()
     sizi4.write('・音源1')
     sizi5 = st.empty()
-    audio_file=open('Test1_FS_AFC_60.wav','rb')
+    audio_file=open('Test1_AFC_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi5.audio(audio_file_test_bytes, start_time=0)
     sizi6 = st.empty()
     sizi6.write('・音源2')
     sizi7 = st.empty()
-    audio_file=open('Test1_B_PEM_AFC_60.wav','rb')
+    audio_file=open('Test1_FS_AFC_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select3=sel1.radio('1-1.リファレンス音源に近い音源を選択してください。',('1','2'))
-    st.select1_3=select3 
+    st.select1_1=sel1.radio('1-1.リファレンス音源に近い音源を選択してください。',('1','2'))
     
     nex=st.empty()
-    next1_button=nex.button('次の音源へ(2/18)')
+    next1_button=nex.button('次の音源へ(2/36)')
     if next1_button:
         sel1.empty()
         nex.empty()
@@ -255,12 +255,13 @@ if st.session_state.count == -19:
         sizi6.empty()
         sizi7.empty()
         my_bar.empty()
-        st.session_state.count = -18
+        st.session_state.count = -37
 
-#  classic FS-AFC/AFC    
-if st.session_state.count == -18:
+# クラシック1-2 AFC/swAFC
+st.session_state.time = time.time()
+if st.session_state.count == -37:
     my_bar = st.progress(0)
-    my_bar.progress(int(100/18*2))
+    my_bar.progress(int(100/36*2))
     sizi = st.empty()
     sizi.header('１ー２．クラシック')
     # リファレンス音源
@@ -272,28 +273,24 @@ if st.session_state.count == -18:
     sizi3.audio(audio_file_test_bytes, start_time=0)
     sizi4 = st.empty()
     sizi4.write('・音源1')
-    sizi5=st.empty()
-    audio_file=open('Test1_FS_AFC_60.wav','rb')
+    sizi5 = st.empty()
+    audio_file=open('Test1_AFC_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi5.audio(audio_file_test_bytes, start_time=0)
     sizi6 = st.empty()
     sizi6.write('・音源2')
-    sizi7=st.empty()
-    audio_file=open('Test1_AFC_60.wav','rb')
+    sizi7 = st.empty()
+    audio_file=open('Test1_swPEM_AFC_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select1=sel1.radio('1-2.リファレンス音源に近い音源を選択してください。',('1','2'))
-    if select1=='1':
-        st.select1_1=str('2')
-    else:
-        st.select1_1=str('1')   
+    st.select1_2=sel1.radio('1-2.リファレンス音源に近い音源を選択してください。',('1','2'))
+    
     nex=st.empty()
-    next1_button=nex.button('次の音源へ(3/18)')
+    next1_button=nex.button('次の音源へ(3/36)')
     if next1_button:
         sel1.empty()
         nex.empty()
-        sel1.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -302,12 +299,12 @@ if st.session_state.count == -18:
         sizi6.empty()
         sizi7.empty()
         my_bar.empty()
-        st.session_state.count = -17
-        
-#  classics B-PEM-AFC/AFC
-if st.session_state.count == -17: 
+        st.session_state.count = -36
+# クラシック1-3 AFC/Prop 
+st.session_state.time = time.time()
+if st.session_state.count == -36:
     my_bar = st.progress(0)
-    my_bar.progress(int(100/18*3))
+    my_bar.progress(int(100/36*3))
     sizi = st.empty()
     sizi.header('１ー３．クラシック')
     # リファレンス音源
@@ -320,27 +317,23 @@ if st.session_state.count == -17:
     sizi4 = st.empty()
     sizi4.write('・音源1')
     sizi5 = st.empty()
-    audio_file=open('Test1_B_PEM_AFC_60.wav','rb')
+    audio_file=open('Test1_AFC_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi5.audio(audio_file_test_bytes, start_time=0)
     sizi6 = st.empty()
     sizi6.write('・音源2')
     sizi7 = st.empty()
-    audio_file=open('Test1_AFC_60.wav','rb')
+    audio_file=open('Test1_B_PEM_AFC_60.wav','rb')
     audio_file_test_bytes = audio_file.read()
     sizi7.audio(audio_file_test_bytes, start_time=0)
     sel1 = st.empty()
-    select2=sel1.radio('1-3.リファレンス音源に近い音源を選択してください。',('1','2'))
-    if select2=='1':
-        st.select1_2=str('2')  
-    else:
-        st.select1_2=str('1')  
+    st.select1_3=sel1.radio('1-3.リファレンス音源に近い音源を選択してください。',('1','2'))
+    
     nex=st.empty()
-    next1_button=nex.button('次の音源へ(4/18)')
+    next1_button=nex.button('次の音源へ(4/36)')
     if next1_button:
         sel1.empty()
         nex.empty()
-        sel1.empty()
         sizi.empty()
         sizi2.empty()
         sizi3.empty()
@@ -349,7 +342,144 @@ if st.session_state.count == -17:
         sizi6.empty()
         sizi7.empty()
         my_bar.empty()
-        st.session_state.count = -16
+        st.session_state.count = -35
+# クラシック1-4 FS/swAFC 
+st.session_state.time = time.time()
+if st.session_state.count == -35:
+    my_bar = st.progress(0)
+    my_bar.progress(int(100/36*4))
+    sizi = st.empty()
+    sizi.header('１ー４．クラシック')
+    # リファレンス音源
+    sizi2 = st.empty()
+    sizi2.write('・リファレンス音源')
+    sizi3=st.empty()
+    audio_file=open('Test1_reference_60.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi3.audio(audio_file_test_bytes, start_time=0)
+    sizi4 = st.empty()
+    sizi4.write('・音源1')
+    sizi5 = st.empty()
+    audio_file=open('Test1_FS_AFC_60.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi5.audio(audio_file_test_bytes, start_time=0)
+    sizi6 = st.empty()
+    sizi6.write('・音源2')
+    sizi7 = st.empty()
+    audio_file=open('Test1_swPEM_AFC_60.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi7.audio(audio_file_test_bytes, start_time=0)
+    sel1 = st.empty()
+    st.select1_4=sel1.radio('1-4.リファレンス音源に近い音源を選択してください。',('1','2'))
+    
+    nex=st.empty()
+    next1_button=nex.button('次の音源へ(5/36)')
+    if next1_button:
+        sel1.empty()
+        nex.empty()
+        sizi.empty()
+        sizi2.empty()
+        sizi3.empty()
+        sizi4.empty()
+        sizi5.empty()
+        sizi6.empty()
+        sizi7.empty()
+        my_bar.empty()
+        st.session_state.count = -34
+        st.session_state.time = time.time()
+# クラシック1-5 FS/Prop　
+if st.session_state.count == -34:
+    my_bar = st.progress(0)
+    my_bar.progress(int(100/36*4))
+    sizi = st.empty()
+    sizi.header('１ー５．クラシック')
+    # リファレンス音源
+    sizi2 = st.empty()
+    sizi2.write('・リファレンス音源')
+    sizi3=st.empty()
+    audio_file=open('Test1_reference_60.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi3.audio(audio_file_test_bytes, start_time=0)
+    sizi4 = st.empty()
+    sizi4.write('・音源1')
+    sizi5 = st.empty()
+    audio_file=open('Test1_FS_AFC_60.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi5.audio(audio_file_test_bytes, start_time=0)
+    sizi6 = st.empty()
+    sizi6.write('・音源2')
+    sizi7 = st.empty()
+    audio_file=open('Test1_B_PEM_AFC_60.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi7.audio(audio_file_test_bytes, start_time=0)
+    sel1 = st.empty()
+    st.select1_5=sel1.radio('1-5.リファレンス音源に近い音源を選択してください。',('1','2'))
+    
+    nex=st.empty()
+    next1_button=nex.button('次の音源へ(6/36)')
+    if next1_button:
+        sel1.empty()
+        nex.empty()
+        sizi.empty()
+        sizi2.empty()
+        sizi3.empty()
+        sizi4.empty()
+        sizi5.empty()
+        sizi6.empty()
+        sizi7.empty()
+        my_bar.empty()
+        st.session_state.count = -33
+        st.session_state.time = time.time()
+if st.session_state.count == -33:
+    my_bar = st.progress(0)
+    my_bar.progress(int(100/36*6))
+    sizi = st.empty()
+    sizi.header('１ー６．クラシック')
+    # リファレンス音源
+    sizi2 = st.empty()
+    sizi2.write('・リファレンス音源')
+    sizi3=st.empty()
+    audio_file=open('Test1_reference_60.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi3.audio(audio_file_test_bytes, start_time=0)
+    sizi4 = st.empty()
+    sizi4.write('・音源1')
+    sizi5 = st.empty()
+    audio_file=open('Test1_FS_AFC_60.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi5.audio(audio_file_test_bytes, start_time=0)
+    sizi6 = st.empty()
+    sizi6.write('・音源2')
+    sizi7 = st.empty()
+    audio_file=open('Test1_swPEM_AFC_60.wav','rb')
+    audio_file_test_bytes = audio_file.read()
+    sizi7.audio(audio_file_test_bytes, start_time=0)
+    sel1 = st.empty()
+    st.select1_6=sel1.radio('1-6.リファレンス音源に近い音源を選択してください。',('1','2'))
+    
+    nex=st.empty()
+    next1_button=nex.button('次の音源へ(7/36)')
+    if next1_button:
+        sel1.empty()
+        nex.empty()
+        sizi.empty()
+        sizi2.empty()
+        sizi3.empty()
+        sizi4.empty()
+        sizi5.empty()
+        sizi6.empty()
+        sizi7.empty()
+        my_bar.empty()
+        st.session_state.count = -32
+        
+    #if select1=='1':
+    #    st.select1_1=str('2')
+    #else:
+    #    st.select1_1=str('1')   
+#####################################################################################################
+# 鐘の音        
+
+   
     
 # 1 3 2
 # bell FS-AFC/AFC
